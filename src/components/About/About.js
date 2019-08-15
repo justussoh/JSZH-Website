@@ -17,7 +17,9 @@ class About extends React.Component {
                     <h3>About</h3>
                     <Row>
                         <Col>
-                            <img />
+                            <img src=''/>
+                        </Col>
+                        <Col>
                         </Col>
                     </Row>
                 </Container>
