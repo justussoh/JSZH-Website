@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db916cf9-195a-446d-9aba-4bd145c84daf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/cv2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Experience/Experience.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/NavigationBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WordCloud/WordCloud.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WordCloud/WordCloud.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/history.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Contact/Contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Project/Project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/NavigationBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565837446372</updated>
-      <workItem from="1565837448274" duration="283000" />
+      <workItem from="1565837448274" duration="959000" />
     </task>
     <servers />
   </component>

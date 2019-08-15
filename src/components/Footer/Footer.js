@@ -1,24 +1,23 @@
 import React from 'react';
 import history from '../../history';
 import styled from 'styled-components';
-
-import {Nav, Navbar} from 'react-bootstrap';
+import {Container, Col, Row} from 'react-bootstrap';
 
 const Styles = styled.div`
 
 `;
 
-class NavigationBar extends React.Component {
+class Footer extends React.Component {
 
     render() {
 
         return (
             <Styles>
-                <h3>Hello</h3>
+                <h3>Footer</h3>
             </Styles>
         );
     }
 }
 
-export default NavigationBar;
+export default Footer;
 
