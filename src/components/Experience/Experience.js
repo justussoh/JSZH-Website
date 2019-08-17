@@ -12,16 +12,23 @@ class Experience extends React.Component {
     render() {
 
         return (
-            <Styles>
-                <Container fluid style={{height:"100vh"}}>
-                    <h3>Experience</h3>
+
+            <Container fluid style={{ padding: '50px 0px'}}>
+                <Styles>
+                    <Col xs={{span: 10, offset: 1}}>
+                    <h2 className='text-center'>Experience</h2>
                     <Row>
                         <Col>
-                            <img />
+                        </Col>
+                        <Col>
+                        </Col>
+                        <Col>
                         </Col>
                     </Row>
-                </Container>
-            </Styles>
+                    </Col>
+                </Styles>
+            </Container>
+
         );
     }
 }

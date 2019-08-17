@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db916cf9-195a-446d-9aba-4bd145c84daf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/about.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Skills/Skills.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Experience/Experience.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Experience/Experience.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/NavigationBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -55,9 +61,20 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
   </component>
@@ -71,7 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565837446372</updated>
-      <workItem from="1565837448274" duration="6942000" />
+      <workItem from="1565837448274" duration="21400000" />
     </task>
     <servers />
   </component>

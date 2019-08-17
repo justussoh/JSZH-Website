@@ -7,13 +7,13 @@ const Styles = styled.div`
 
 `;
 
-class About extends React.Component {
+class Skills extends React.Component {
 
     render() {
 
         return (
 
-            <Container fluid style={{ height:'100vh'}} className='d-flex justify-content-center align-items-center'>
+            <Container fluid style={{ padding: '50px 0px'}}>
                 <Styles>
                     <Col xs={{span: 10, offset: 1}}>
                         <Row>
@@ -36,5 +36,5 @@ class About extends React.Component {
     }
 }
 
-export default About;
+export default Skills;
 
