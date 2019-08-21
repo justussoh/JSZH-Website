@@ -18,14 +18,15 @@ function App() {
     return (
         <React.Fragment>
             <Router history={history}>
-                <Switch>
-                    <Route exact path="/" component={LandingSite}/>
-                </Switch>
                 <Container fluid>
                     <Row>
-                        <NavigationBar/>
-                        <Col>
+                        <Switch>
+                            <Route exact path="/" component={''}/>
+                            <Route component={NavigationBar}/>
+                        </Switch>
+                        <Col style={{padding:0}}>
                             <Switch>
+                                <Route exact path="/" component={LandingSite}/>
                                 <Route exact path="/home" component={Home}/>
                                 <Route exact path="/about" component={About}/>
                                 <Route exact path="/skill" component={Skills}/>

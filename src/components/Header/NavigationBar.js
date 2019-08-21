@@ -22,6 +22,19 @@ const Styles = styled.div`
         margin:0;
     }
     
+    .top{
+        position: absolute;
+        width: 60px;
+        text-align: center;
+        display: block;
+        padding: 0;
+        list-style: none;
+        margin:0;
+        background: #070707;
+        padding-top: 10px;
+        top:0;
+    }
+    
     .nav-bar{
         background-color:#181818;
         width:60px;
@@ -29,6 +42,14 @@ const Styles = styled.div`
         padding: 0 10px;
     }
      
+     .logo-font{
+        color:#08fdd8;
+        margin-bottom: 3px;
+     }
+     
+     .logo-sub-font{
+        color:white;
+     }
       
     .outer-container {
       position: relative;
@@ -100,6 +121,10 @@ class NavigationBar extends React.Component {
         return (
             <Styles>
                 <nav className="d-flex flex-column justify-content-center align-items-center nav-bar">
+                    <Row className='d-flex flex-column align-content-center justify-content-center top'>
+                        <h3 className='logo-font'>J<span style={{color:'#FC0853'}}>s</span></h3>
+                        <h6 className='logo-sub-font'>Justus</h6>
+                    </Row>
                     <Row onClick={() => {
                         this.setState({location:'/home'});
                         history.push('/home')
@@ -137,19 +162,19 @@ class NavigationBar extends React.Component {
                          className='outer-container d-flex align-content-center justify-content-center'>
                         <WorkIcon className={this.state.location === '/experience' ? 'active icon' : 'icon'} />
                         <div className="overlay">
-                            <div className="inner-text">Experience</div>
+                            <div className="inner-text">Portfolio</div>
                         </div>
                     </Row>
-                    <Row onClick={() => {
-                        this.setState({location:'/project'});
-                        history.push('/project')
-                    }}
-                         className='outer-container d-flex align-content-center justify-content-center'>
-                        <ExploreIcon className={this.state.location === '/project' ? 'active icon' : 'icon'}/>
-                        <div className="overlay">
-                            <div className="inner-text">Project</div>
-                        </div>
-                    </Row>
+                    {/*<Row onClick={() => {*/}
+                    {/*    this.setState({location:'/project'});*/}
+                    {/*    history.push('/project')*/}
+                    {/*}}*/}
+                    {/*     className='outer-container d-flex align-content-center justify-content-center'>*/}
+                    {/*    <ExploreIcon className={this.state.location === '/project' ? 'active icon' : 'icon'}/>*/}
+                    {/*    <div className="overlay">*/}
+                    {/*        <div className="inner-text">Project</div>*/}
+                    {/*    </div>*/}
+                    {/*</Row>*/}
                     <Row onClick={() => {
                         this.setState({location:'/contact'});
                         history.push('/contact')

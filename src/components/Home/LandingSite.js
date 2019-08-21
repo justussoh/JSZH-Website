@@ -11,10 +11,9 @@ const Styles = styled.div`
 class LandingSite extends React.Component {
 
     render() {
-
         return (
             <Styles>
-                <Container fluid style={{height:"100vh"}}>
+                <Container fluid style={{height:"100vh", backgroundColor:'#252627'}}>
                     <WordCloud />
                 </Container>
             </Styles>

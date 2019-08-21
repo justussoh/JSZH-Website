@@ -20,7 +20,7 @@ class WordCloud extends React.Component {
     componentDidMount() {
         setInterval(() => {
             this.forceUpdate();
-        }, 6000);
+        }, 3000);
     }
 
     handleClick = () =>{

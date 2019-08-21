@@ -17,19 +17,8 @@ class Home extends React.Component {
 
         return (
             <Styles>
-                <Container fluid style={{marginTop:100}}>
-                    <Row id='about'>
-                        <About />
-                    </Row>
-                    <Row id='experience'>
-                        <Experience />
-                    </Row>
-                    <Row id='project'>
-                        <Project />
-                    </Row>
-                    <Row id='contact'>
-                        <Contact />
-                    </Row>
+                <Container fluid>
+                    <h2>J</h2>
                 </Container>
             </Styles>
         );
