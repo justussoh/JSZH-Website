@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import {Container, Col, Row} from 'react-bootstrap';
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
+import Loading from "../Loading/Loading";
+import SwitchTransition from "react-transition-group/SwitchTransition";
+import {CSSTransition} from "react-transition-group";
 
 const Styles = styled.div`
     .gridList{
@@ -160,38 +163,62 @@ class Experience extends React.Component {
                 img: '/images/mjc.png'
             },
         ],
+        isLoading: true,
+    };
+
+    componentDidMount() {
+        window.setTimeout(() => this.setState({isLoading: false}), 1000)
+    }
+
+    renderContent = () => {
+        switch (this.state.isLoading) {
+            case true:
+                return <Loading/>;
+            default:
+
+                return (
+                    <Container fluid style={{
+                        height: '100vh',
+                        backgroundColor: "#252627",
+                        paddingLeft: 0,
+                        paddingRight: 0,
+                        overflow: 'hidden',
+                    }}>
+                        <Styles style={{height: "100%"}}>
+                            <GridList cellHeight='auto' spacing={1} className='gridList' cols={4}>
+                                {this.state.tileData.map(tile => (
+                                    <GridListTile key={tile.title} cols={tile.featured ? 2 : 1}
+                                                  rows={tile.featured ? 2 : 1}
+                                                  className='item'>
+                                        <div>
+                                            <img src={tile.img} alt={tile.title}/>
+                                        </div>
+                                        <div className="item-overlay"></div>
+                                        <div className="inner-text">
+                                            <h2 className='font-h2'>
+                                                <span className='span-ani'>{tile.title}</span>
+                                            </h2>
+                                        </div>
+                                    </GridListTile>
+                                ))}
+                            </GridList>
+                        </Styles>
+                    </Container>
+                );
+        }
     };
 
     render() {
-
         return (
-            <Container fluid style={{
-                height: '100vh',
-                backgroundColor: "#252627",
-                paddingLeft: 0,
-                paddingRight: 0,
-                overflow: 'hidden',
-            }}>
-                <Styles style={{height:"100%"}}>
-                    <GridList  cellHeight='auto' spacing={1} className='gridList' cols={4} >
-                        {this.state.tileData.map(tile => (
-                            <GridListTile key={tile.title} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1}
-                                          className='item'>
-                                <div>
-                                    <img src={tile.img} alt={tile.title}/>
-                                </div>
-                                <div className="item-overlay"></div>
-                                <div className="inner-text">
-                                    <h2 className='font-h2'>
-                                        <span className='span-ani'>{tile.title}</span>
-                                    </h2>
-                                </div>
-                            </GridListTile>
-                        ))}
-                    </GridList>
-                </Styles>
-            </Container>
-        );
+            <SwitchTransition>
+                <CSSTransition key={this.state.isLoading}
+                               timeout={600}
+                               classNames='page'
+                >
+                    {this.renderContent()}
+                </CSSTransition>
+            </SwitchTransition>
+        )
     }
 }
 

@@ -2,12 +2,12 @@ import React from 'react';
 import history from '../../history';
 import styled from 'styled-components';
 import {Container, Col, Row, Nav} from 'react-bootstrap';
-import PersonIcon from '@material-ui/icons/Person';
-import BarIcon from '@material-ui/icons/BarChart';
+import PersonIcon from '@material-ui/icons/PersonOutlined';
+import BarIcon from '@material-ui/icons/ShowChartOutlined';
 import ExploreIcon from '@material-ui/icons/Explore';
-import WorkIcon from '@material-ui/icons/Work';
-import MailIcon from '@material-ui/icons/Mail';
-import HomeIcon from '@material-ui/icons/Home';
+import WorkIcon from '@material-ui/icons/WorkOutline';
+import MailIcon from '@material-ui/icons/MailOutlined';
+import HomeIcon from '@material-ui/icons/HomeOutlined';
 
 
 const Styles = styled.div`
@@ -88,7 +88,7 @@ const Styles = styled.div`
     }
     
     .outer-container:hover .overlay {
-      opacity: .9;
+      opacity: .95;
     }
     
     .inner-text {
@@ -102,6 +102,8 @@ const Styles = styled.div`
       transform: translate(-50%, -50%);
       text-align: center;
       cursor:pointer;
+      font-weight:bold;
+      font-family: "Open Sans",sans-serif;
     }
 
 `;
@@ -122,8 +124,9 @@ class NavigationBar extends React.Component {
             <Styles>
                 <nav className="d-flex flex-column justify-content-center align-items-center nav-bar">
                     <Row className='d-flex flex-column align-content-center justify-content-center top'>
-                        <h3 className='logo-font'>J<span style={{color:'#FC0853'}}>s</span></h3>
-                        <h6 className='logo-sub-font'>Justus</h6>
+                        {/*<h3 className='logo-font'>J<span style={{color:'#FC0853'}}>s</span></h3>*/}
+                        {/*<h6 className='logo-sub-font'>Justus</h6>*/}
+                        <img src='/images/logo-1.png' alt={''} style={{width:50, height:'auto', marginBottom: 10}}/>
                     </Row>
                     <Row onClick={() => {
                         this.setState({location:'/home'});
@@ -132,7 +135,7 @@ class NavigationBar extends React.Component {
                          className='outer-container d-flex align-content-center justify-content-center'>
                         <HomeIcon className={this.state.location === '/home' ? 'active icon' : 'icon'}/>
                         <div className="overlay">
-                            <div className="inner-text">Home</div>
+                            <div className="inner-text">HOME</div>
                         </div>
                     </Row>
                     <Row onClick={() => {
@@ -142,7 +145,7 @@ class NavigationBar extends React.Component {
                          className='outer-container d-flex align-content-center justify-content-center'>
                         <PersonIcon className={this.state.location === '/about' ? 'active icon' : 'icon'}/>
                         <div className="overlay">
-                            <div className="inner-text">About</div>
+                            <div className="inner-text">ABOUT</div>
                         </div>
                     </Row>
                     <Row onClick={() => {
@@ -152,7 +155,7 @@ class NavigationBar extends React.Component {
                          className='outer-container d-flex align-content-center justify-content-center'>
                         <BarIcon className={this.state.location === '/skill' ? 'active icon' : 'icon'}/>
                         <div className="overlay">
-                            <div className="inner-text">Skill</div>
+                            <div className="inner-text">SKILL</div>
                         </div>
                     </Row>
                     <Row onClick={() => {
@@ -162,7 +165,7 @@ class NavigationBar extends React.Component {
                          className='outer-container d-flex align-content-center justify-content-center'>
                         <WorkIcon className={this.state.location === '/experience' ? 'active icon' : 'icon'} />
                         <div className="overlay">
-                            <div className="inner-text">Portfolio</div>
+                            <div className="inner-text">WORK</div>
                         </div>
                     </Row>
                     {/*<Row onClick={() => {*/}
@@ -184,7 +187,7 @@ class NavigationBar extends React.Component {
                              style={{padding: "0 10px"}}>
                             <MailIcon className={this.state.location === '/contact' ? 'active icon' : 'icon'}/>
                             <div className="overlay">
-                                <div className="inner-text">Contact</div>
+                                <div className="inner-text">CONTACT</div>
                             </div>
                         </div>
                     </Row>
