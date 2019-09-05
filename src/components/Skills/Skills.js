@@ -83,7 +83,7 @@ class Skills extends React.Component {
                                             XD for
                                             design. And am
                                             fluent in spoken and written English and Chinese.</p>
-                                        <p className='font'>Visit my <a className='font-link'>LinkedIn</a>, <a
+                                        <p className='font'>Visit my <a href='https://www.linkedin.com/in/justussoh/' target='_blank' className='font-link'>LinkedIn</a>, <a
                                             href='https://github.com/justussoh' target='_blank'
                                             className='font-link'>Github</a> or <a
                                             href='https://public.tableau.com/profile/justus.soh#!/'

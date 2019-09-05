@@ -52,14 +52,14 @@ class Loading extends React.Component {
             this.setState({completed: 100});
         } else {
             this.setState({completed});
-            const diff = Math.random() * 10;
-            this.timer = setTimeout(() => this.progress(completed + diff), 2000);
+            let diff = Math.random() * 10;
+            return this.progress(completed + diff);
         }
     };
 
     componentDidMount() {
-        this.setState({index: getRandomInt(0, this.state.quotes.length),});
-        this.timer = setTimeout(() => this.progress(100), 0);
+        this.setState({index: getRandomInt(0, this.state.quotes.length),completed:0});
+        window.setTimeout(() => this.progress(0), 0);
     }
 
     componentWillUnmount() {

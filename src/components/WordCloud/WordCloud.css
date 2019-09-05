@@ -26,3 +26,63 @@
 .tag-cloud > div {
     transition: 2s;
 }
+
+.font-color {
+    color: white;
+}
+
+.font-wordcloud {
+    font-family: "Open Sans", sans-serif !important;
+    margin-bottom: 0;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.font-sub-wordcloud {
+    font-family: "Open Sans", sans-serif !important;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.blink {
+    animation: blink 2s steps(5, start) infinite;
+    -webkit-animation: blink 1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+.arrow {
+    color: white;
+    width: 5vh !important;
+    cursor: pointer;
+}
+
+.icon {
+    margin: 0 8px;
+    height: 30px !important;
+    width: auto !important;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+}
+
+.icon:hover {
+    color: #08fdd8;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    cursor: pointer;
+}
+
+.hover-container:hover .hover{
+    color: #08fdd8;
+    cursor: pointer;
+}
