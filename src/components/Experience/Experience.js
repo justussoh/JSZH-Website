@@ -148,9 +148,9 @@ class Experience extends React.Component {
                 img: '/images/simpfleet.png'
             },
             {
-                title: 'Website',
+                title: 'National University of Singapore',
                 featured: false,
-                img: '/images/jszh.png'
+                img: '/images/nuslogo.jpg'
             },
             {
                 title: 'Tembusu College',
