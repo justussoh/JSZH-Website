@@ -106,20 +106,20 @@
 
 .input__field--nao:focus + .input__label--nao,
 .input--filled .input__label--nao {
-    color: #08fdd8;
+    color: #fcbd0b;
     -webkit-transform: translate3d(0, -1.25em, 0) scale3d(0.75, 0.75, 1);
     transform: translate3d(0, -1.25em, 0) scale3d(0.75, 0.75, 1);
 }
 
 .input__field--nao:focus ~ .graphic--nao,
 .input--filled .graphic--nao {
-    stroke: #08fdd8;
+    stroke: #fcbd0b;
     -webkit-transform: translate3d(-66.6%, 0, 0);
     transform: translate3d(-66.6%, 0, 0);
 }
 
 .input__label--nao--filled{
-    color: #08fdd8;
+    color: #fcbd0b;
     transform: translate3d(0, -1.25em, 0) scale3d(0.75, 0.75, 1);
 }
 

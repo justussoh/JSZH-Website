@@ -22,7 +22,7 @@ const Styles = styled.div`
     }
     
     .MuiLinearProgress-barColorPrimary{
-        background-color:#404040!important;
+        background-color:#fcbd0b!important;
     }
 `;
 

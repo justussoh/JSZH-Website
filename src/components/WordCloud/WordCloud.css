@@ -77,7 +77,7 @@
 }
 
 .icon:hover {
-    color: #08fdd8;
+    color: #fcbd0b;
     opacity: 1;
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
@@ -85,6 +85,6 @@
 }
 
 .hover-container:hover .hover {
-    color: #08fdd8;
+    color: #fcbd0b;
     cursor: pointer;
 }

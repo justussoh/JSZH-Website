@@ -16,17 +16,17 @@
 .contact-button {
     width: 130px;
     margin-top: 16px !important;
-    border: 1px solid #08fdd8 !important;
-    color: #08fdd8 !important;
+    border: 1px solid #fcbd0b !important;
+    color: #fcbd0b !important;
 }
 
 .contact-button:hover {
-    background-color: #08fdd8 !important;
+    background-color: #fcbd0b !important;
     color: #252627 !important;
 }
 
 .contact-button:active {
-    background-color: #08fdd8 !important;
+    background-color: #fcbd0b !important;
     color: #252627 !important;
 }
 
@@ -48,8 +48,8 @@
 }
 
 #mainText path:hover {
-    fill: #08fdd8;
-    stroke: #08fdd8;
+    fill: #fcbd0b;
+    stroke: #fcbd0b;
     transition: all 0.1s ease;
     -moz-transition: all 0.1s ease;
     -webkit-transition: all 0.1s ease;

@@ -13,11 +13,11 @@ const data = [
         'Level',
         {role: 'style'},
     ],
-    ['R', 76, '#08fdd8'],
-    ['Python', 80, '#08fdd8'],
-    ['Making Tea', 99, '#08fdd8'],
-    ['JavaScipt', 70, '#08fdd8'],
-    ['Tableau', 77, '#08fdd8'],
+    ['R', 76, '#fcbd0b'],
+    ['Python', 80, '#fcbd0b'],
+    ['Making Tea', 99, '#fcbd0b'],
+    ['JavaScipt', 70, '#fcbd0b'],
+    ['Tableau', 77, '#fcbd0b'],
 ];
 
 const Styles = styled.div`
@@ -26,12 +26,12 @@ const Styles = styled.div`
     }
     
     .font-title{
-        color:#08fdd8;
+        color:#fcbd0b;
         font-weight: bold;
     }
     
     .font-link{
-        color:#08fdd8;
+        color:#fcbd0b;
         text-decoration:underline;
         cursor:pointer;
     }

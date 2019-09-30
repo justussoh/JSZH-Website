@@ -17,7 +17,7 @@ const Styles = styled.div`
     }
     
     .font-title{
-        color:#08fdd8;
+        color:#fcbd0b;
         font-weight: bold;
     }
     
@@ -38,15 +38,15 @@ const Styles = styled.div`
         color: #92989e !important;
         
         &:hover{
-            background-color: #08fdd8 !important;
+            background-color: #fcbd0b !important;
             color: #252627 !important;
-            border: 2px solid #08fdd8 !important;
+            border: 2px solid #fcbd0b !important;
         }
         
         &:active{
-            background-color: #08fdd8 !important;
+            background-color: #fcbd0b !important;
             color: #252627 !important;
-            border: 2px solid #08fdd8 !important;
+            border: 2px solid #fcbd0b !important;
         }        
     }
 `;
@@ -106,7 +106,7 @@ class Contact extends React.Component {
                                className='d-flex justify-content-center align-items-center'>
                         <Styles style={{width: '100%', height: '100%'}}>
                             <Row style={{height: '100%'}}>
-                                <Col xs={12} md={{span: 4, offset: 1}}
+                                <Col xs={12} md={{span: 6, offset: 3}}
                                      className='d-flex align-items-start justify-content-center flex-column'>
 
                                     <div style={{padding: 15}}>
@@ -197,14 +197,14 @@ class Contact extends React.Component {
                                         </Row>
                                     </div>
                                 </Col>
-                                <Col xs={false} md={{span: 6, offset: 1}}>
-                                    <ReactMapGL
-                                        {...this.state.viewport}
-                                        onViewportChange={(viewport) => this.setState({viewport})}
-                                        mapboxApiAccessToken={MAPBOX_TOKEN}
-                                        mapStyle={'mapbox://styles/justussoh/cjzkz0evc02sv1cozec2q5cjs'}
-                                    />
-                                </Col>
+                                {/*<Col xs={false} md={{span: 6, offset: 1}}>*/}
+                                {/*    <ReactMapGL*/}
+                                {/*        {...this.state.viewport}*/}
+                                {/*        onViewportChange={(viewport) => this.setState({viewport})}*/}
+                                {/*        mapboxApiAccessToken={MAPBOX_TOKEN}*/}
+                                {/*        mapStyle={'mapbox://styles/justussoh/cjzkz0evc02sv1cozec2q5cjs'}*/}
+                                {/*    />*/}
+                                {/*</Col>*/}
                             </Row>
                         </Styles>
                     </Container>

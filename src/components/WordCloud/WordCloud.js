@@ -54,8 +54,8 @@ class WordCloud extends React.Component {
         return (
             <div className="app-outer">
                 <div className="app-inner">
-                    <div className='d-flex align-items-center'>
-                        <div style={{position:"relative"}}>
+                    <div className='d-flex align-items-center' style={{padding:" 0 10%"}}>
+                        <div style={{position: "relative",}}>
                             <h3 className='font-color font-wordcloud'>Justus Soh</h3>
                             <h6 className='font-color font-sub-wordcloud'>Data Analyst / Web Developer</h6>
                         </div>
