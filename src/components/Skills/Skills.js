@@ -59,7 +59,7 @@ class Skills extends React.Component {
             default:
 
                 return (
-                    <Container fluid style={{height: '100vh', backgroundColor: "#252627"}}
+                    <Container fluid style={{height: '100vh'}}
                                className='d-flex justify-content-center align-items-center'>
                         <Styles>
                             <Col xs={{span: 10, offset: 1}}>
@@ -105,7 +105,7 @@ class Skills extends React.Component {
                                                     easing: 'linear',
                                                     duration: 1500,
                                                 },
-                                                backgroundColor: '#252627',
+                                                backgroundColor: 'none',
                                                 hAxis: {
                                                     baselineColor: '#fff',
                                                     gridlines: {

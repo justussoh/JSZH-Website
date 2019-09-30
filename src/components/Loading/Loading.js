@@ -69,7 +69,7 @@ class Loading extends React.Component {
     render() {
 
         return (
-            <Container fluid style={{height: '100vh', backgroundColor: "#252627"}}
+            <Container fluid style={{height: '100vh'}}
                        className='d-flex justify-content-center align-items-center'>
                 <Styles>
                     <div style={{width: '30vw'}}

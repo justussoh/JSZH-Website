@@ -102,7 +102,7 @@ class Contact extends React.Component {
             default:
                 return (
                     <Container fluid
-                               style={{height: '100vh', backgroundColor: "#252627", padding: 0, overflow: 'hidden'}}
+                               style={{height: '100vh', padding: 0, overflow: 'hidden'}}
                                className='d-flex justify-content-center align-items-center'>
                         <Styles style={{width: '100%', height: '100%'}}>
                             <Row style={{height: '100%'}}>

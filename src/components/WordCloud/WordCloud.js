@@ -2,12 +2,11 @@ import React from 'react';
 import history from '../../history';
 import TagCloud from "react-tag-cloud";
 
-import {faAngleDown, faEnvelope} from '@fortawesome/free-solid-svg-icons'
-import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faAngleDown, faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-import './WordCloud.css'
-import {Row} from "react-bootstrap";
+import './WordCloud.css';
 
 const styles = {
     large: {
@@ -56,7 +55,7 @@ class WordCloud extends React.Component {
             <div className="app-outer">
                 <div className="app-inner">
                     <div className='d-flex align-items-center'>
-                        <div>
+                        <div style={{position:"relative"}}>
                             <h3 className='font-color font-wordcloud'>Justus Soh</h3>
                             <h6 className='font-color font-sub-wordcloud'>Data Analyst / Web Developer</h6>
                         </div>

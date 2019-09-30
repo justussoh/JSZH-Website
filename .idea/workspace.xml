@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db916cf9-195a-446d-9aba-4bd145c84daf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/bg.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Contact/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Contact/Contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/NavigationBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/LandingSite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/LandingSite.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Loading/Loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loading/Loading.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Skills/Skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Skills/Skills.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/WordCloud/WordCloud.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordCloud/WordCloud.css" afterDir="false" />
@@ -93,7 +99,13 @@
       <workItem from="1566533088269" duration="24000" />
       <workItem from="1566547182220" duration="312000" />
       <workItem from="1566879465168" duration="463000" />
-      <workItem from="1567670748122" duration="4984000" />
+      <workItem from="1567670748122" duration="5323000" />
+      <workItem from="1567743390425" duration="1796000" />
+      <workItem from="1568189385622" duration="1195000" />
+      <workItem from="1568193221454" duration="2561000" />
+      <workItem from="1568954185560" duration="1880000" />
+      <workItem from="1569403950609" duration="11000" />
+      <workItem from="1569777597257" duration="9355000" />
     </task>
     <servers />
   </component>

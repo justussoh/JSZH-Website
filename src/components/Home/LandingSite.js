@@ -13,7 +13,7 @@ class LandingSite extends React.Component {
     render() {
         return (
             <Styles>
-                <Container fluid style={{height:"100vh", backgroundColor:'#252627'}}>
+                <Container fluid style={{height:"100vh"}}>
                     <WordCloud />
                 </Container>
             </Styles>

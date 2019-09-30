@@ -8,12 +8,12 @@ import {CSSTransition} from "react-transition-group";
 
 const Styles = styled.div`
     .font-color{
-        color:white;
+        color:#fff;
         
     }
     
     .font-title{
-        color:#08fdd8;
+        color:#fcbd0b;
         font-weight: bold;
     }
 `;
@@ -34,7 +34,7 @@ class About extends React.Component {
                 return <Loading/>;
             default:
                 return (
-                    <Container fluid style={{height: '100vh', backgroundColor: "#252627"}}
+                    <Container fluid style={{height: '100vh'}}
                                className='d-flex justify-content-center align-items-center'>
                         <Styles>
                             <Col xs={{span: 10, offset: 1}}>

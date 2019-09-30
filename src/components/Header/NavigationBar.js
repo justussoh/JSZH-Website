@@ -30,13 +30,13 @@ const Styles = styled.div`
         padding: 0;
         list-style: none;
         margin:0;
-        background: #070707;
+        
         padding-top: 10px;
         top:0;
     }
     
     .nav-bar{
-        background-color:#181818;
+        
         width:60px;
         height: 100vh;
         padding: 0 10px;
@@ -61,16 +61,18 @@ const Styles = styled.div`
       display: block;
       width: 70%;
       height: auto;
-      color:#4d4d4e;
+      color:#fff;
       transition: .3s ease;
     }
     
     .outer-container:hover .icon {
-        color:#08fdd8;
+        color:#fff;
+        opacity:1;
     }
     
     .active{
-        color:#08fdd8;
+        color:#fff;
+        opacity:1;
     }
     
     .overlay {
@@ -83,16 +85,21 @@ const Styles = styled.div`
       width: 100%;
       opacity: 0;
       transition: .5s ease;
-      background-color:#181818;
-      
+      background-color:#fcbd0b;
     }
+    
+    .overlay-mail {
+      background-color:#252627 !important;
+    }
+    
+    
     
     .outer-container:hover .overlay {
       opacity: .95;
     }
     
     .inner-text {
-      color:#08fdd8;
+      color:#fff;
       font-size: 12px;
       position: absolute;
       top: 50%;
@@ -186,7 +193,7 @@ class NavigationBar extends React.Component {
                         <div className='outer-container d-flex align-content-center justify-content-center'
                              style={{padding: "0 10px"}}>
                             <MailIcon className={this.state.location === '/contact' ? 'active icon' : 'icon'}/>
-                            <div className="overlay">
+                            <div className="overlay overlay-mail">
                                 <div className="inner-text">CONTACT</div>
                             </div>
                         </div>

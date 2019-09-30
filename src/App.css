@@ -1,8 +1,10 @@
 .container-main {
     position: relative;
     height:100vh;
+    width: 100vw;
     overflow: hidden;
-    background-color: #252627;
+    background: url('/images/bg.svg') no-repeat center;
+    background-size: cover;
 }
 
 .page {

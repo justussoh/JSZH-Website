@@ -37,7 +37,7 @@ class Home extends React.Component {
                 return <Loading/>;
             default:
                 return (
-                    <Container fluid style={{height: '100vh', backgroundColor: "#252627", overflow: 'hidden'}}
+                    <Container fluid style={{height: '100vh', overflow: 'hidden'}}
                                className='d-flex justify-content-center align-items-center'>
                         <Styles style={{width: '100%', height: '100%'}}>
                             <Row className='h-100'>
