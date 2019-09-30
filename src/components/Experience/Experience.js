@@ -74,35 +74,40 @@ const Styles = styled.div`
     }
     
     .inner-text {
-          position: absolute;
-        width: 100%;
+        position: absolute;
         text-align: center;
+        left: 50%;
         top: 50%;
-        left: 0;
-        -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+    
+    .inner-circle {
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         z-index: 1;
     }
     
-    .font-h2:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 50px;
-        margin-left: -25px;
-        height: 2px;
-        background: #fff;
-        background: rgba(255, 255, 255, 0.5);
-        transition: all 200ms ease;
-        -webkit-transition: all 200ms ease;
-        -moz-transition: all 200ms ease;
-        -o-transition: all 200ms ease;
-        -ms-transition: all 200ms ease;
+    .circle{
+        border-radius: 50%;
+        background-color:#fcbd0b;
+        width:150px;
+        height:150px;
+        opacity:0;
+        transition: all 0.5s ease;
+        border: 2px solid #ffd04d;
     }
+    
+    .item:hover .circle{
+        animation: createBox .5s forwards;
+    }
+    .item:hover .font-h2{
+        animation: createBox .5s forwards;
+    }
+    
     
     .span-ani{
         -webkit-transition: all 0.25s ease;
@@ -114,10 +119,25 @@ const Styles = styled.div`
     .font-h2{
         display: inline-block;
         vertical-align: middle;
-        margin: 0 50px;
-        padding-bottom: 0.75em;
         height: 100%;
         color: #fff;
+        font-size:12px;
+        font-weight:bold;
+        letter-spacing: 1px; 
+        opacity:0;
+        transition: all 0.5s ease;
+        font-family: "Open Sans", sans-serif;
+    }
+    
+    @keyframes createBox {
+      from {
+        transform: scale(0);
+        opacity:0;
+      }
+      to {
+        transform: scale(1);
+        opacity:1;
+      }
     }
    
     
@@ -129,36 +149,49 @@ class Experience extends React.Component {
         tileData: [
             {
                 title: 'Ship Supplies Direct',
-                featured: true,
+                text: 'VIEW EXPERIENCE',
+                featured: false,
                 img: '/images/ssd.png'
             },
             {
+                title: 'SimpFleet',
+                text: 'VIEW PROJECT',
+                featured: false,
+                img: '/images/simpfleet.png'
+            },
+            {
                 title: 'Singapore Armed Forces',
+                text: 'VIEW EXPERIENCE',
                 featured: false,
                 img: '/images/eod.png'
             },
             {
                 title: 'Fifty Fifty',
+                text: 'VIEW PROJECT',
                 featured: false,
                 img: '/images/fifty.png'
             },
             {
-                title: 'SimpFleet',
+                title: 'jszh.me',
+                text: 'VIEW PROJECT',
                 featured: false,
                 img: '/images/simpfleet.png'
             },
             {
                 title: 'National University of Singapore',
+                text: 'VIEW EXPERIENCE',
                 featured: false,
                 img: '/images/nuslogo.jpg'
             },
             {
                 title: 'Tembusu College',
+                text: 'VIEW EXPERIENCE',
                 featured: false,
                 img: '/images/tembu.png'
             },
             {
                 title: 'The Meridian Council',
+                text: 'VIEW EXPERIENCE',
                 featured: false,
                 img: '/images/mjc.png'
             },
@@ -193,11 +226,13 @@ class Experience extends React.Component {
                                         <div>
                                             <img src={tile.img} alt={tile.title}/>
                                         </div>
-                                        <div className="item-overlay"></div>
                                         <div className="inner-text">
                                             <h2 className='font-h2'>
-                                                <span className='span-ani'>{tile.title}</span>
+                                                <span className='span-ani'>{tile.text}</span>
                                             </h2>
+                                        </div>
+                                        <div className='inner-circle'>
+                                            <div className='circle'></div>
                                         </div>
                                     </GridListTile>
                                 ))}
