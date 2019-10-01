@@ -4,11 +4,22 @@ import styled from 'styled-components';
 import {Container, Col, Row} from 'react-bootstrap';
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import Loading from "../Loading/Loading";
 import SwitchTransition from "react-transition-group/SwitchTransition";
 import {CSSTransition} from "react-transition-group";
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+
+import './Modal.css';
 
 const Styles = styled.div`
+
     .gridList{
         transform: 'translateZ(0)';
     }
@@ -151,94 +162,232 @@ class Experience extends React.Component {
                 title: 'Ship Supplies Direct',
                 text: 'VIEW EXPERIENCE',
                 featured: false,
+                type: 'experience',
+                time: ['Aug 2019 – Present (Part Time)', 'May 2019 – Aug 2019 (Intern)'],
+                role: 'Data Analyst / Software Developer Intern, Part Time',
+                content: [
+                    'Analyzed vessel berthing timing and created a model to predict delay in vessel berth timing.',
+                    'Analyzed list of potential customers based on data (trip frequency/volume) to allow for more data driven decisions with dashboard visualization.',
+                    'Teach computer vision model to identify and count items using CRNN model.',
+                    'Developed responsive main website for company.',
+                ],
+                links: [['View Site', 'http://www.shipsuppliesdirect.com']],
                 img: '/images/ssd.png'
             },
             {
                 title: 'SimpFleet',
                 text: 'VIEW PROJECT',
                 featured: false,
+                type: 'project',
+                time: ['Aug 2019 – Present (Part Time)', 'May 2019 – Aug 2019 (Intern)'],
+                role: 'Data Analyst / Software Developer Intern, Part Time',
+                content: [
+                    'Developed responsive landing page and web application for Simpfleet.',
+                    'Developed job creation, dashboard, analytics, job scheduling and view details modules for Simpfleet.',
+                    'Developed a scheduling algorithm which find most efficient route of delivery.',
+                ],
+                links: [['View Site', 'http://www.simpfleet.com']],
                 img: '/images/simpfleet.png'
             },
             {
                 title: 'Singapore Armed Forces',
                 text: 'VIEW EXPERIENCE',
                 featured: false,
+                type: 'experience',
+                time: ['Jan 2016 – Nov 2017'],
+                role: 'Pioneer and Vehicle In-Charge, 36 Singapore Combat Engineers (EOD)',
+                content: [
+                    'Responsible for the deployment and maintenance of all vehicles.',
+                    'Managed nineteen men in my unit for daily operations.',
+                ],
+                links: [],
                 img: '/images/eod.png'
             },
             {
-                title: 'Fifty Fifty',
+                title: 'FIFTYFIFTY',
                 text: 'VIEW PROJECT',
                 featured: false,
+                type: 'project-50',
+                time: ['May 2019 - Aug 2019'],
+                role: 'Apollo 11 – Highest level award, Nominated Judge’s Choice',
+                content: [],
+                links: [['View Project', 'http://fifty50x.web.app'], ['View Repository', 'http://github.com/justussoh/fifty50']],
                 img: '/images/fifty.png'
             },
             {
                 title: 'jszh.me',
                 text: 'VIEW PROJECT',
                 featured: false,
+                type: 'project',
+                time: ['Aug 2019 – October 2019'],
+                role: 'Developed using React',
+                content: [],
+                links: [['View Site', 'http://jszh.me']],
                 img: '/images/simpfleet.png'
             },
             {
                 title: 'National University of Singapore',
                 text: 'VIEW EXPERIENCE',
                 featured: false,
+                type: 'experience',
+                time: ['Aug 2018 - Present'],
+                role: 'Bachelor of Science (Honours) in Business Analytics – CAP 4.42',
+                content: ['Learnt programming languages: Python, R and Java.',
+                    'Learnt data visualization and database management system: Tableau and MySQL',
+                    'Currently also under the University Town College Program in Tembusu College'],
+                links: [],
                 img: '/images/nuslogo.jpg'
             },
             {
                 title: 'Tembusu College',
                 text: 'VIEW EXPERIENCE',
                 featured: false,
+                type: 'experience',
+                time: ['Aug 2018 - Present'],
+                role: 'Resident and Student',
+                content: ['Represented Tembusu College for Floorball in ICG’18',
+                    'Tembusu Climbing Club',
+                    'Co-leaders for Tembusu Christian Fellowship'
+                ],
+                links: [],
                 img: '/images/tembu.png'
             },
             {
-                title: 'The Meridian Council',
+                title: 'Meridian Junior College',
                 text: 'VIEW EXPERIENCE',
                 featured: false,
+                type: 'experience',
+                time: ['Jan 2014 - Dec 2015'],
+                role: 'Rank Points: 86.75 / 90.00, Distinction in H2 Physics, H2 Math AND H2 Chemistry.',
+                content: [
+                    'Colors Award for leadership qualities',
+                    'Vice President for Orientation Committee',
+                    'Member of the MJC Entrepreneurship Club'
+                ],
+                links: [],
                 img: '/images/mjc.png'
             },
         ],
         isLoading: true,
+        showModal: false,
+        modalIndex: 0,
     };
 
     componentDidMount() {
         window.setTimeout(() => this.setState({isLoading: false}), 1000)
     }
 
+    clickTile = (index) => {
+        this.setState({showModal: true, modalIndex: index})
+    };
+
+    closeModal = () => {
+        this.setState({showModal: false})
+    };
+
+    handleClickLink = (link) => {
+        console.log(link)
+        window.open(link, '_blank')
+    };
+
+    renderModalContent = (tile) => {
+        switch (tile.type) {
+            case 'project-50':
+                return (
+                    <div>
+                        <p><i>Project summary</i>: Fifty50 is a web application which allows for online polling of
+                            questions for quick thoughts and opinions. The combination of flexible question type, clean
+                            user interface and smart analytics of results is our unique selling point. It is built on
+                            firebase and React framework.
+                        </p>
+                    </div>
+                );
+            default:
+                return (
+                    <ul className='list-font'>
+                        {tile.content.map(point => {
+                            return (
+                                <li>{point}</li>
+                            );
+                        })}
+                    </ul>
+                );
+        }
+    };
+
+    renderModal = () => {
+        let tile = this.state.tileData[this.state.modalIndex];
+        return (
+            <Dialog
+                fullWidth={true}
+                open={this.state.showModal}
+                onClose={this.closeModal}
+                maxWidth="sm"
+                // PaperProps={{style:{minHeight:300}}}
+            >
+                <DialogTitle id="alert-dialog-title" className='modal-top'>
+                    <div className='d-flex'>
+                        <div className='d-flex flex-column'>
+                            <h4 className='modal-top-title'>{tile.title}</h4>
+                            <p className='modal-top-subtext'>{tile.role}</p>
+                            {tile.time.map(time => {
+                                return (
+                                    <p className='modal-top-subtext'>{time}</p>
+                                );
+                            })}
+
+                        </div>
+                        <div className='ml-auto'>
+                            <IconButton aria-label="Close" className='modal-close'
+                                        onClick={this.closeModal}>
+                                <CloseIcon/>
+                            </IconButton>
+                        </div>
+                    </div>
+                </DialogTitle>
+                <DialogContent className='modal-exp-content'>
+                    {this.renderModalContent(tile)}
+                </DialogContent>
+
+                <DialogActions className='d-flex align-items-center justify-content-center modal-bottom'>
+                    {tile.links.length > 0 ? tile.links.map((link, index) => {
+                        return (
+                            <Button variant="outlined" onClick={() => this.handleClickLink(tile.links[index][1])}
+                                    className='visit-site-button'>{tile.links[index][0]}</Button>
+                        );
+                    }) : ''}
+                </DialogActions>
+
+            </Dialog>
+        );
+
+    };
+
     renderContent = () => {
         switch (this.state.isLoading) {
             case true:
                 return <Loading/>;
             default:
-
                 return (
-                    <Container fluid style={{
-                        height: '100vh',
-                        backgroundColor: "#252627",
-                        paddingLeft: 0,
-                        paddingRight: 0,
-                        overflow: 'hidden',
-                    }}>
-                        <Styles style={{height: "100%"}}>
-                            <GridList cellHeight='auto' spacing={1} className='gridList' cols={4}>
-                                {this.state.tileData.map(tile => (
-                                    <GridListTile key={tile.title} cols={tile.featured ? 2 : 1}
-                                                  rows={tile.featured ? 2 : 1}
-                                                  className='item'>
-                                        <div>
-                                            <img src={tile.img} alt={tile.title}/>
-                                        </div>
-                                        <div className="inner-text">
-                                            <h2 className='font-h2'>
-                                                <span className='span-ani'>{tile.text}</span>
-                                            </h2>
-                                        </div>
-                                        <div className='inner-circle'>
-                                            <div className='circle'></div>
-                                        </div>
-                                    </GridListTile>
-                                ))}
-                            </GridList>
-                        </Styles>
-                    </Container>
+                    <GridList cellHeight='auto' spacing={1} className='gridList' cols={4}>
+                        {this.state.tileData.map((tile, index) => (
+                            <GridListTile key={tile.title} cols={tile.featured ? 2 : 1}
+                                          rows={tile.featured ? 2 : 1}
+                                          className='item' onClick={() => this.clickTile(index)}>
+                                <div>
+                                    <img src={tile.img} alt={tile.title}/>
+                                </div>
+                                <div className="inner-text">
+                                    <h2 className='font-h2'>
+                                        <span className='span-ani'>{tile.text}</span>
+                                    </h2>
+                                </div>
+                                <div className='inner-circle'>
+                                    <div className='circle'></div>
+                                </div>
+                            </GridListTile>
+                        ))}
+                    </GridList>
                 );
         }
     };
@@ -250,7 +399,18 @@ class Experience extends React.Component {
                                timeout={600}
                                classNames='page'
                 >
-                    {this.renderContent()}
+                    <Container fluid style={{
+                        height: '100vh',
+                        backgroundColor: "#252627",
+                        paddingLeft: 0,
+                        paddingRight: 0,
+                        overflow: 'hidden',
+                    }}>
+                        <Styles style={{height: "100%"}}>
+                            {this.renderContent()}
+                            {this.renderModal()}
+                        </Styles>
+                    </Container>
                 </CSSTransition>
             </SwitchTransition>
         )

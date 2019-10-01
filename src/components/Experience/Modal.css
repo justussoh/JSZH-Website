@@ -1,0 +1,44 @@
+.modal-top-subtext{
+    font-size:12px;
+    font-style: italic;
+    margin-bottom:0;
+    font-family: "Open Sans", sans-serif;
+    color: #8d8d8d;
+}
+
+.modal-top-title{
+    margin-bottom: 0px;
+    font-family: "Open Sans", sans-serif;
+    color: #696969;
+}
+
+.modal-top{
+    padding:40px 40px 0 40px!important;
+}
+
+.modal-bottom{
+    padding:0px 40px 20px 40px!important;
+}
+
+.modal-exp-content{
+    padding: 8px 40px !important;
+}
+
+.list-font{
+    font-family: "Open Sans", sans-serif;
+    color: #696969;
+    margin-bottom: 0;
+}
+
+.visit-site-button {
+    width: 175px;
+    padding: 8px 0!important;
+    margin-top: 16px !important;
+    border: 1px solid #fcbd0b !important;
+    color: #fcbd0b !important;
+}
+
+.visit-site-button:hover {
+    background-color: #fcbd0b !important;
+    color: #fff !important;
+}

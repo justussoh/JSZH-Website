@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db916cf9-195a-446d-9aba-4bd145c84daf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Experience/Modal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Experience/Experience.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Experience/Experience.js" afterDir="false" />
     </list>
@@ -95,7 +96,8 @@
       <workItem from="1568193221454" duration="2561000" />
       <workItem from="1568954185560" duration="1880000" />
       <workItem from="1569403950609" duration="11000" />
-      <workItem from="1569777597257" duration="17359000" />
+      <workItem from="1569777597257" duration="27687000" />
+      <workItem from="1569945808997" duration="2803000" />
     </task>
     <servers />
   </component>
