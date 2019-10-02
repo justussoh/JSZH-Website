@@ -1,5 +1,4 @@
 import React from 'react';
-import history from '../../history';
 import styled from 'styled-components';
 import {Container, Col, Row} from 'react-bootstrap';
 import GridList from "@material-ui/core/GridList";
@@ -8,11 +7,12 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Loading from "../Loading/Loading";
 import SwitchTransition from "react-transition-group/SwitchTransition";
 import {CSSTransition} from "react-transition-group";
+import Snackbar from "@material-ui/core/Snackbar";
+import Slide from "@material-ui/core/Slide";
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
@@ -271,10 +271,12 @@ class Experience extends React.Component {
         isLoading: true,
         showModal: false,
         modalIndex: 0,
+        showSnackBar:true,
     };
 
     componentDidMount() {
-        window.setTimeout(() => this.setState({isLoading: false}), 1000)
+        window.setTimeout(() => this.setState({isLoading: false}), 1000);
+        window.setTimeout(() => this.setState({showSnackBar: false}), 4000);
     }
 
     clickTile = (index) => {
@@ -285,8 +287,15 @@ class Experience extends React.Component {
         this.setState({showModal: false})
     };
 
+    SlideTransition = (props) => {
+        return <Slide {...props} direction="up"/>
+    };
+
+    handleSnackBarClose = () => {
+        this.setState({showSnackBar: false})
+    };
+
     handleClickLink = (link) => {
-        console.log(link)
         window.open(link, '_blank')
     };
 
@@ -314,9 +323,9 @@ class Experience extends React.Component {
             default:
                 return (
                     <ul className='list-font'>
-                        {tile.content.map(point => {
+                        {tile.content.map((point,index) => {
                             return (
-                                <li>{point}</li>
+                                <li key={index}>{point}</li>
                             );
                         })}
                     </ul>
@@ -339,9 +348,9 @@ class Experience extends React.Component {
                         <div className='d-flex flex-column'>
                             <h4 className='modal-top-title'>{tile.title}</h4>
                             <p className='modal-top-subtext'>{tile.role}</p>
-                            {tile.time.map(time => {
+                            {tile.time.map((time,index) => {
                                 return (
-                                    <p className='modal-top-subtext'>{time}</p>
+                                    <p key={index} className='modal-top-subtext'>{time}</p>
                                 );
                             })}
 
@@ -361,7 +370,7 @@ class Experience extends React.Component {
                 <DialogActions className='d-flex align-items-center justify-content-center modal-bottom'>
                     {tile.links.length > 0 ? tile.links.map((link, index) => {
                         return (
-                            <Button variant="outlined" onClick={() => this.handleClickLink(tile.links[index][1])}
+                            <Button key={index} variant="outlined" onClick={() => this.handleClickLink(tile.links[index][1])}
                                     className='visit-site-button'>{tile.links[index][0]}</Button>
                         );
                     }) : ''}
@@ -418,7 +427,22 @@ class Experience extends React.Component {
                         <Styles style={{height: "100%"}}>
                             {this.renderContent()}
                             {this.renderModal()}
+                            <Snackbar anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
+                                      open={this.state.showSnackBar && !this.state.isLoading}
+                                      message={<span id="message-id">Please note these some projects are not my design, just the code!</span>}
+                                      action={
+                                          <IconButton
+                                              key="close"
+                                              color="inherit"
+                                              onClick={this.handleSnackBarClose}
+                                          >
+                                              <CloseIcon/>
+                                          </IconButton>
+                                      }
+                                      TransitionComponent={this.SlideTransition}
+                            />
                         </Styles>
+
                     </Container>
                 </CSSTransition>
             </SwitchTransition>

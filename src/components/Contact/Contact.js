@@ -5,6 +5,10 @@ import styled from 'styled-components';
 import {Container, Col, Row} from 'react-bootstrap';
 import ReactMapGL from 'react-map-gl';
 import Button from '@material-ui/core/Button';
+import Snackbar from "@material-ui/core/Snackbar";
+import Slide from "@material-ui/core/Slide";
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 
 import './Contact.css'
@@ -13,7 +17,7 @@ import Loading from "../Loading/Loading";
 import SwitchTransition from "react-transition-group/SwitchTransition";
 import {CSSTransition} from "react-transition-group";
 
-const API_PATH = 'http://jszh.me/api/contact/index.php';
+const API_PATH = '/api/contact/index.php';
 
 
 const Styles = styled.div`
@@ -116,8 +120,16 @@ class Contact extends React.Component {
         }).then(result => {
             this.setState({
                 mailSent: result.data.sent
-            })
+            });
         }).catch(error => this.setState({error: error.message}))
+    };
+
+    SlideTransition = (props) => {
+        return <Slide {...props} direction="up"/>
+    };
+
+    handleSnackBarClose = () => {
+        this.setState({mailSent: false})
     };
 
 
@@ -218,7 +230,7 @@ class Contact extends React.Component {
                                                 d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                                         </svg>
                                     </span>
-                                                <Button variant="outlined" className='submit-button'>SUBMIT</Button>
+                                                <Button variant="outlined" className='submit-button' onClick={this.handleFormSubmit}>SUBMIT</Button>
                                             </Col>
                                         </Row>
                                     </div>
@@ -232,6 +244,20 @@ class Contact extends React.Component {
                                 {/*    />*/}
                                 {/*</Col>*/}
                             </Row>
+                            <Snackbar anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
+                                      open={this.state.mailSent}
+                                      message={<span id="message-id">Message has been sent!</span>}
+                                      action={
+                                          <IconButton
+                                              key="close"
+                                              color="inherit"
+                                              onClick={this.handleSnackBarClose}
+                                          >
+                                              <CloseIcon/>
+                                          </IconButton>
+                                      }
+                                      TransitionComponent={this.SlideTransition}
+                            />
                         </Styles>
                     </Container>
                 );
