@@ -107,13 +107,6 @@ class Contact extends React.Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-        // this.setState({
-        //     mailSent: true,
-        //     name: '',
-        //     email: '',
-        //     subject: '',
-        //     message: '',
-        // });
         axios({
             method: 'post',
             url: `${API_PATH}`,
@@ -126,13 +119,19 @@ class Contact extends React.Component {
             }
         }).then(result => {
             this.setState({
-                mailSent: result.data.sent,
-                name: '',
+                mailSent: result.data.sent,name: '',
                 email: '',
                 subject: '',
                 message: '',
             });
         }).catch(error => this.setState({error: error.message}))
+        this.setState({
+            mailSent: true,
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+        });
     };
 
     SlideTransition = (props) => {
