@@ -1,15 +1,20 @@
 import React from 'react';
+import axios from 'axios';
 import history from '../../history';
 import styled from 'styled-components';
 import {Container, Col, Row} from 'react-bootstrap';
 import ReactMapGL from 'react-map-gl';
 import Button from '@material-ui/core/Button';
 
+
 import './Contact.css'
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Loading from "../Loading/Loading";
 import SwitchTransition from "react-transition-group/SwitchTransition";
 import {CSSTransition} from "react-transition-group";
+
+const API_PATH = 'http://jszh.me/api/contact/index.php';
+
 
 const Styles = styled.div`
     .font-color{
@@ -60,6 +65,8 @@ class Contact extends React.Component {
         email: '',
         subject: '',
         message: '',
+        mailSent: false,
+        error: null,
         focus: false,
         viewport: {
             width: '100%',
@@ -94,6 +101,25 @@ class Contact extends React.Component {
         this.setState({focus: false})
     };
 
+    handleFormSubmit = (e) => {
+        e.preventDefault();
+        axios({
+            method: 'post',
+            url: `${API_PATH}`,
+            headers: {'content-type': 'application/json'},
+            data: {
+                name: this.state.name,
+                email: this.state.email,
+                subject: this.state.subject,
+                message: this.state.message,
+            }
+        }).then(result => {
+            this.setState({
+                mailSent: result.data.sent
+            })
+        }).catch(error => this.setState({error: error.message}))
+    };
+
 
     renderContent = () => {
         switch (this.state.isLoading) {
@@ -112,7 +138,7 @@ class Contact extends React.Component {
                                     <div style={{padding: 15}}>
                                         <h2 className='font-title'>Contact Me</h2>
                                         <p className='font-color'>If you have any questions, don't hesitate to contact
-                                            me
+                                            me at <a href="mailto:justus.soh@hotmail.com" style={{color:'#fcbd0b'}}>justus.soh@hotmail.com</a> or <a style={{color:'#fcbd0b'}} href="tel:+6584815984">+6584816984</a> or
                                             with the form below</p>
                                     </div>
                                     <div>

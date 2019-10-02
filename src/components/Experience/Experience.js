@@ -215,15 +215,15 @@ class Experience extends React.Component {
                 img: '/images/fifty.png'
             },
             {
-                title: 'jszh.me',
+                title: 'JSZH.ME',
                 text: 'VIEW PROJECT',
                 featured: false,
-                type: 'project',
+                type: 'project-jszh',
                 time: ['Aug 2019 – October 2019'],
                 role: 'Developed using React',
                 content: [],
                 links: [['View Site', 'http://jszh.me']],
-                img: '/images/simpfleet.png'
+                img: '/images/jszh.png'
             },
             {
                 title: 'National University of Singapore',
@@ -236,7 +236,7 @@ class Experience extends React.Component {
                     'Learnt data visualization and database management system: Tableau and MySQL',
                     'Currently also under the University Town College Program in Tembusu College'],
                 links: [],
-                img: '/images/nuslogo.jpg'
+                img: '/images/nuslogo.png'
             },
             {
                 title: 'Tembusu College',
@@ -250,7 +250,7 @@ class Experience extends React.Component {
                     'Co-leaders for Tembusu Christian Fellowship'
                 ],
                 links: [],
-                img: '/images/tembu.png'
+                img: '/images/tembusu.png'
             },
             {
                 title: 'Meridian Junior College',
@@ -299,6 +299,15 @@ class Experience extends React.Component {
                             questions for quick thoughts and opinions. The combination of flexible question type, clean
                             user interface and smart analytics of results is our unique selling point. It is built on
                             firebase and React framework.
+                        </p>
+                    </div>
+                );
+            case 'project-jszh':
+                return (
+                    <div>
+                        <p><i>Project summary</i>: JSZH is a static website that is meant to showcase my skills using
+                            React and other front end libraries. Some future plans I have for the site is to implement
+                            a database to the backend to store all my experiences as well as make the site mobile friendly.
                         </p>
                     </div>
                 );
