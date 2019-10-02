@@ -107,32 +107,32 @@ class Contact extends React.Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-        this.setState({
-            mailSent: true,
-            name: '',
-            email: '',
-            subject: '',
-            message: '',
-        });
-        // axios({
-        //     method: 'post',
-        //     url: `${API_PATH}`,
-        //     headers: {'content-type': 'application/json'},
-        //     data: {
-        //         name: this.state.name,
-        //         email: this.state.email,
-        //         subject: this.state.subject,
-        //         message: this.state.message,
-        //     }
-        // }).then(result => {
-        //     this.setState({
-        //         mailSent: result.data.sent,
-        //         name: '',
-        //         email: '',
-        //         subject: '',
-        //         message: '',
-        //     });
-        // }).catch(error => this.setState({error: error.message}))
+        // this.setState({
+        //     mailSent: true,
+        //     name: '',
+        //     email: '',
+        //     subject: '',
+        //     message: '',
+        // });
+        axios({
+            method: 'post',
+            url: `${API_PATH}`,
+            headers: {'content-type': 'application/json'},
+            data: {
+                name: this.state.name,
+                email: this.state.email,
+                subject: this.state.subject,
+                message: this.state.message,
+            }
+        }).then(result => {
+            this.setState({
+                mailSent: result.data.sent,
+                name: '',
+                email: '',
+                subject: '',
+                message: '',
+            });
+        }).catch(error => this.setState({error: error.message}))
     };
 
     SlideTransition = (props) => {
