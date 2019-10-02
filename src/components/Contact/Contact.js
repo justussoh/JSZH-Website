@@ -79,7 +79,7 @@ class Contact extends React.Component {
             longitude: 103.808053,
             zoom: 10
         },
-        isLoading:true,
+        isLoading: true,
     };
 
     componentDidMount() {
@@ -107,21 +107,32 @@ class Contact extends React.Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-        axios({
-            method: 'post',
-            url: `${API_PATH}`,
-            headers: {'content-type': 'application/json'},
-            data: {
-                name: this.state.name,
-                email: this.state.email,
-                subject: this.state.subject,
-                message: this.state.message,
-            }
-        }).then(result => {
-            this.setState({
-                mailSent: result.data.sent
-            });
-        }).catch(error => this.setState({error: error.message}))
+        this.setState({
+            mailSent: true,
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+        });
+        // axios({
+        //     method: 'post',
+        //     url: `${API_PATH}`,
+        //     headers: {'content-type': 'application/json'},
+        //     data: {
+        //         name: this.state.name,
+        //         email: this.state.email,
+        //         subject: this.state.subject,
+        //         message: this.state.message,
+        //     }
+        // }).then(result => {
+        //     this.setState({
+        //         mailSent: result.data.sent,
+        //         name: '',
+        //         email: '',
+        //         subject: '',
+        //         message: '',
+        //     });
+        // }).catch(error => this.setState({error: error.message}))
     };
 
     SlideTransition = (props) => {
@@ -150,7 +161,9 @@ class Contact extends React.Component {
                                     <div style={{padding: 15}}>
                                         <h2 className='font-title'>Contact Me</h2>
                                         <p className='font-color'>If you have any questions, don't hesitate to contact
-                                            me at <a href="mailto:justus.soh@hotmail.com" style={{color:'#fcbd0b'}}>justus.soh@hotmail.com</a> or <a style={{color:'#fcbd0b'}} href="tel:+6584815984">+6584816984</a> or
+                                            me at <a href="mailto:justus.soh@hotmail.com"
+                                                     style={{color: '#fcbd0b'}}>justus.soh@hotmail.com</a> or <a
+                                                style={{color: '#fcbd0b'}} href="tel:+6584815984">+6584816984</a> or
                                             with the form below</p>
                                     </div>
                                     <div>
@@ -158,7 +171,7 @@ class Contact extends React.Component {
                                             <Col>
                                     <span className="input input--nao">
                                         <input className="input__field input__field--nao" type="text" id="input-1"
-                                               onChange={this.handleName}/>
+                                               onChange={this.handleName} value={this.state.name}/>
                                         <label
                                             className={this.state.name !== '' ? "input__label input__label--nao input__label--nao--filled" : "input__label input__label--nao"}
                                             htmlFor="input-1">
@@ -175,7 +188,7 @@ class Contact extends React.Component {
                                             <Col>
                                         <span className="input input--nao">
                                         <input className="input__field input__field--nao" type="text" id="input-4"
-                                               onChange={this.handleEmail}/>
+                                               onChange={this.handleEmail} value={this.state.email}/>
                                         <label
                                             className={this.state.email !== '' ? "input__label input__label--nao input__label--nao--filled" : "input__label input__label--nao"}
                                             htmlFor="input-4">
@@ -195,7 +208,7 @@ class Contact extends React.Component {
                                             <Col>
                                     <span className="input input--nao">
                                         <input className="input__field input__field--nao" type="text" id="input-2"
-                                               onChange={this.handleSubject}/>
+                                               onChange={this.handleSubject} value={this.state.subject}/>
                                         <label
                                             className={this.state.subject !== '' ? "input__label input__label--nao input__label--nao--filled" : "input__label input__label--nao"}
                                             htmlFor="input-2">
@@ -216,7 +229,7 @@ class Contact extends React.Component {
                                     <span className="input input--nao">
                                         <textarea rows="4" className="input__field input__field--nao" id="input-3"
                                                   onChange={this.handleMessage} onFocus={this.handleFocus}
-                                                  onBlur={this.handleBlur}/>
+                                                  onBlur={this.handleBlur} value={this.state.message}/>
                                         <label
                                             className={(this.state.message !== '' || this.state.focus) ? "input__label input__label--nao input__label--nao--filled" : "input__label input__label--nao"}
                                             htmlFor="input-3">
@@ -230,7 +243,8 @@ class Contact extends React.Component {
                                                 d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                                         </svg>
                                     </span>
-                                                <Button variant="outlined" className='submit-button' onClick={this.handleFormSubmit}>SUBMIT</Button>
+                                                <Button variant="outlined" className='submit-button'
+                                                        onClick={this.handleFormSubmit}>SUBMIT</Button>
                                             </Col>
                                         </Row>
                                     </div>

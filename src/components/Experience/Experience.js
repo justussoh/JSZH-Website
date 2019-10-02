@@ -271,7 +271,7 @@ class Experience extends React.Component {
         isLoading: true,
         showModal: false,
         modalIndex: 0,
-        showSnackBar:true,
+        showSnackBar: true,
     };
 
     componentDidMount() {
@@ -316,14 +316,15 @@ class Experience extends React.Component {
                     <div>
                         <p><i>Project summary</i>: JSZH is a static website that is meant to showcase my skills using
                             React and other front end libraries. Some future plans I have for the site is to implement
-                            a database to the backend to store all my experiences as well as make the site mobile friendly.
+                            a database to the backend to store all my experiences as well as make the site mobile
+                            friendly.
                         </p>
                     </div>
                 );
             default:
                 return (
                     <ul className='list-font'>
-                        {tile.content.map((point,index) => {
+                        {tile.content.map((point, index) => {
                             return (
                                 <li key={index}>{point}</li>
                             );
@@ -348,7 +349,7 @@ class Experience extends React.Component {
                         <div className='d-flex flex-column'>
                             <h4 className='modal-top-title'>{tile.title}</h4>
                             <p className='modal-top-subtext'>{tile.role}</p>
-                            {tile.time.map((time,index) => {
+                            {tile.time.map((time, index) => {
                                 return (
                                     <p key={index} className='modal-top-subtext'>{time}</p>
                                 );
@@ -370,7 +371,8 @@ class Experience extends React.Component {
                 <DialogActions className='d-flex align-items-center justify-content-center modal-bottom'>
                     {tile.links.length > 0 ? tile.links.map((link, index) => {
                         return (
-                            <Button key={index} variant="outlined" onClick={() => this.handleClickLink(tile.links[index][1])}
+                            <Button key={index} variant="outlined"
+                                    onClick={() => this.handleClickLink(tile.links[index][1])}
                                     className='visit-site-button'>{tile.links[index][0]}</Button>
                         );
                     }) : ''}
@@ -397,11 +399,10 @@ class Experience extends React.Component {
                                 </div>
                                 <div className="inner-text">
                                     <h2 className='font-h2'>
-                                        <span className='span-ani'>{tile.text}</span>
+                                        <div className='circle d-flex align-items-center justify-content-center'>
+                                            <span className='span-ani'>{tile.text}</span>
+                                        </div>
                                     </h2>
-                                </div>
-                                <div className='inner-circle'>
-                                    <div className='circle'></div>
                                 </div>
                             </GridListTile>
                         ))}
