@@ -66,24 +66,15 @@ class Skills extends React.Component {
                                 <Row>
                                     <Col xs={12} md={5}>
                                         <h1 className='font-title'>SKILLS</h1>
-                                        <p className='font'>The main area of my expertise in Data Analytics using R and
-                                            Python.
-                                            Using Data
-                                            Visualization on Tableau to represent the data gain better insight for
-                                            Data.</p>
-                                        <p className='font'>I am also skilled in Data Management on relational databases
-                                            like
-                                            mySQL and non
-                                            relational like MongoDB.</p>
-                                        <p className='font'>HTML, CSS and JavaScript to build web application using
-                                            React
-                                            framework. With full
-                                            stack developer experience using MERN stack </p>
-                                        <p className='font'> I also have knowledge in using Illustrator, Photoshop and
-                                            XD for
-                                            design. And am
-                                            fluent in spoken and written English and Chinese.</p>
-                                        <p className='font'>Visit my <a href='https://www.linkedin.com/in/justussoh/' target='_blank' className='font-link'>LinkedIn</a>, <a
+                                        <p className='font'>
+                                            The main area of my expertise is in Data Analytics (Descriptive, Prescriptive and Predictive Analytics) using R and Python. In addition, I can also do Data Visualization using Tableau to transform data into a more readable format to gain better insight.
+                                        </p>
+                                        <p className='font'>I am also skilled in Data Management on relational databases like mySQL and non-relational like MongoDB.</p>
+                                        <p className='font'>I can also do full stack web development (HTML, CSS and JavaScript), familiar with MERN stack.</p>
+                                        <p className='font'> I also have knowledge in using Illustrator, Photoshop, InDesign and XD for design. And am fluent in spoken and written English and Chinese.</p>
+                                        <p className='font'>Visit my <a href='https://www.linkedin.com/in/justussoh/'
+                                                                        target='_blank'
+                                                                        className='font-link'>LinkedIn</a>, <a
                                             href='https://github.com/justussoh' target='_blank'
                                             className='font-link'>Github</a> or <a
                                             href='https://public.tableau.com/profile/justus.soh#!/'
