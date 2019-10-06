@@ -160,8 +160,8 @@ class Contact extends React.Component {
                                     <div style={{padding: 15}}>
                                         <h2 className='font-title'>Contact Me</h2>
                                         <p className='font-color'>If you have any questions, don't hesitate to contact
-                                            me at <a href="mailto:justus.soh@hotmail.com"
-                                                     style={{color: '#fcbd0b'}}>justus.soh@hotmail.com</a> or <a
+                                            me at <a href="mailto:justus.soh@u.nus.edu"
+                                                     style={{color: '#fcbd0b'}}>justus.soh@u.nus.edu</a> or <a
                                                 style={{color: '#fcbd0b'}} href="tel:+6584815984">+6584816984</a> or
                                             with the form below</p>
                                     </div>

@@ -1,13 +1,16 @@
 import React from 'react';
 import history from '../../history';
 import styled from 'styled-components';
-import {Container, Col, Row, Nav} from 'react-bootstrap';
+import {Container, Col, Row, Nav, Navbar} from 'react-bootstrap';
+import IconButton from "@material-ui/core/IconButton";
 import PersonIcon from '@material-ui/icons/PersonOutlined';
 import BarIcon from '@material-ui/icons/ShowChartOutlined';
 import ExploreIcon from '@material-ui/icons/Explore';
 import WorkIcon from '@material-ui/icons/WorkOutline';
 import MailIcon from '@material-ui/icons/MailOutlined';
 import HomeIcon from '@material-ui/icons/HomeOutlined';
+import MenuIcon from '@material-ui/icons/MenuRounded'
+import MediaQuery from "react-responsive";
 
 
 const Styles = styled.div`
@@ -118,87 +121,101 @@ const Styles = styled.div`
 class NavigationBar extends React.Component {
 
     state = {
-        location:'/home'
+        location: '/home'
     };
 
     componentDidMount() {
-        this.setState({location:window.location.pathname})
+        this.setState({location: window.location.pathname})
     }
+
+    handleLogoClick = () => {
+        history.push('./home')
+    };
 
     render() {
 
         return (
             <Styles>
-                <nav className="d-flex flex-column justify-content-center align-items-center nav-bar">
-                    <Row className='d-flex flex-column align-content-center justify-content-center top'>
-                        {/*<h3 className='logo-font'>J<span style={{color:'#FC0853'}}>s</span></h3>*/}
-                        {/*<h6 className='logo-sub-font'>Justus</h6>*/}
-                        <img src='/images/logo-1.png' alt={''} style={{width:50, height:'auto', marginBottom: 10}}/>
-                    </Row>
-                    <Row onClick={() => {
-                        this.setState({location:'/home'});
-                        history.push('/home')
-                    }}
-                         className='outer-container d-flex align-content-center justify-content-center'>
-                        <HomeIcon className={this.state.location === '/home' ? 'active icon' : 'icon'}/>
-                        <div className="overlay">
-                            <div className="inner-text">HOME</div>
-                        </div>
-                    </Row>
-                    <Row onClick={() => {
-                        this.setState({location:'/about'});
-                        history.push('/about')
-                    }}
-                         className='outer-container d-flex align-content-center justify-content-center'>
-                        <PersonIcon className={this.state.location === '/about' ? 'active icon' : 'icon'}/>
-                        <div className="overlay">
-                            <div className="inner-text">ABOUT</div>
-                        </div>
-                    </Row>
-                    <Row onClick={() => {
-                        this.setState({location:'/skill'});
-                        history.push('/skill')
-                    }}
-                         className='outer-container d-flex align-content-center justify-content-center'>
-                        <BarIcon className={this.state.location === '/skill' ? 'active icon' : 'icon'}/>
-                        <div className="overlay">
-                            <div className="inner-text">SKILL</div>
-                        </div>
-                    </Row>
-                    <Row onClick={() => {
-                        this.setState({location:'/experience'});
-                        history.push('/experience')
-                    }}
-                         className='outer-container d-flex align-content-center justify-content-center'>
-                        <WorkIcon className={this.state.location === '/experience' ? 'active icon' : 'icon'} />
-                        <div className="overlay">
-                            <div className="inner-text">WORK</div>
-                        </div>
-                    </Row>
-                    {/*<Row onClick={() => {*/}
-                    {/*    this.setState({location:'/project'});*/}
-                    {/*    history.push('/project')*/}
-                    {/*}}*/}
-                    {/*     className='outer-container d-flex align-content-center justify-content-center'>*/}
-                    {/*    <ExploreIcon className={this.state.location === '/project' ? 'active icon' : 'icon'}/>*/}
-                    {/*    <div className="overlay">*/}
-                    {/*        <div className="inner-text">Project</div>*/}
-                    {/*    </div>*/}
-                    {/*</Row>*/}
-                    <Row onClick={() => {
-                        this.setState({location:'/contact'});
-                        history.push('/contact')
-                    }}
-                         className='bottom'>
-                        <div className='outer-container d-flex align-content-center justify-content-center'
-                             style={{padding: "0 10px"}}>
-                            <MailIcon className={this.state.location === '/contact' ? 'active icon' : 'icon'}/>
-                            <div className="overlay overlay-mail">
-                                <div className="inner-text">CONTACT</div>
+                <MediaQuery minWidth={426}>
+                    <nav className="d-flex flex-column justify-content-center align-items-center nav-bar">
+                        <Row className='d-flex flex-column align-content-center justify-content-center top'>
+                            {/*<h3 className='logo-font'>J<span style={{color:'#FC0853'}}>s</span></h3>*/}
+                            {/*<h6 className='logo-sub-font'>Justus</h6>*/}
+                            <img onClick={this.handleLogoClick} src='/images/logo-1.png' alt={''}
+                                 style={{width: 50, height: 'auto', marginBottom: 10}}/>
+                        </Row>
+                        <Row onClick={() => {
+                            this.setState({location: '/home'});
+                            history.push('/home')
+                        }}
+                             className='outer-container d-flex align-content-center justify-content-center'>
+                            <HomeIcon className={this.state.location === '/home' ? 'active icon' : 'icon'}/>
+                            <div className="overlay">
+                                <div className="inner-text">HOME</div>
                             </div>
-                        </div>
-                    </Row>
-                </nav>
+                        </Row>
+                        <Row onClick={() => {
+                            this.setState({location: '/about'});
+                            history.push('/about')
+                        }}
+                             className='outer-container d-flex align-content-center justify-content-center'>
+                            <PersonIcon className={this.state.location === '/about' ? 'active icon' : 'icon'}/>
+                            <div className="overlay">
+                                <div className="inner-text">ABOUT</div>
+                            </div>
+                        </Row>
+                        <Row onClick={() => {
+                            this.setState({location: '/skill'});
+                            history.push('/skill')
+                        }}
+                             className='outer-container d-flex align-content-center justify-content-center'>
+                            <BarIcon className={this.state.location === '/skill' ? 'active icon' : 'icon'}/>
+                            <div className="overlay">
+                                <div className="inner-text">SKILL</div>
+                            </div>
+                        </Row>
+                        <Row onClick={() => {
+                            this.setState({location: '/experience'});
+                            history.push('/experience')
+                        }}
+                             className='outer-container d-flex align-content-center justify-content-center'>
+                            <WorkIcon className={this.state.location === '/experience' ? 'active icon' : 'icon'}/>
+                            <div className="overlay">
+                                <div className="inner-text">WORK</div>
+                            </div>
+                        </Row>
+                        {/*<Row onClick={() => {*/}
+                        {/*    this.setState({location:'/project'});*/}
+                        {/*    history.push('/project')*/}
+                        {/*}}*/}
+                        {/*     className='outer-container d-flex align-content-center justify-content-center'>*/}
+                        {/*    <ExploreIcon className={this.state.location === '/project' ? 'active icon' : 'icon'}/>*/}
+                        {/*    <div className="overlay">*/}
+                        {/*        <div className="inner-text">Project</div>*/}
+                        {/*    </div>*/}
+                        {/*</Row>*/}
+                        <Row onClick={() => {
+                            this.setState({location: '/contact'});
+                            history.push('/contact')
+                        }}
+                             className='bottom'>
+                            <div className='outer-container d-flex align-content-center justify-content-center'
+                                 style={{padding: "0 10px"}}>
+                                <MailIcon className={this.state.location === '/contact' ? 'active icon' : 'icon'}/>
+                                <div className="overlay overlay-mail">
+                                    <div className="inner-text">CONTACT</div>
+                                </div>
+                            </div>
+                        </Row>
+                    </nav>
+                </MediaQuery>
+                <MediaQuery maxWidth={425}>
+                    <Navbar fixed='top'>
+                        <IconButton style={{color:"white"}} onClick={this.props.handleOpenMenu}>
+                            <MenuIcon fontSize='large'/>
+                        </IconButton>
+                    </Navbar>
+                </MediaQuery>
             </Styles>
         );
     }
