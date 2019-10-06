@@ -211,9 +211,10 @@ class NavigationBar extends React.Component {
                 </MediaQuery>
                 <MediaQuery maxWidth={425}>
                     <Navbar fixed='top'>
-                        <IconButton style={{color:"white"}} onClick={this.props.handleOpenMenu}>
+                        <IconButton style={{color:"white", marginLeft:'-15px'}} onClick={this.props.handleOpenMenu}>
                             <MenuIcon fontSize='large'/>
                         </IconButton>
+
                     </Navbar>
                 </MediaQuery>
             </Styles>

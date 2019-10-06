@@ -272,11 +272,18 @@ class Experience extends React.Component {
         showModal: false,
         modalIndex: 0,
         showSnackBar: true,
+        mobile: false,
     };
 
     componentDidMount() {
         window.setTimeout(() => this.setState({isLoading: false}), 1000);
         window.setTimeout(() => this.setState({showSnackBar: false}), 4000);
+        window.addEventListener("resize", this.resize.bind(this));
+        this.resize();
+    }
+
+    resize() {
+        this.setState({mobile: window.innerWidth <= 425});
     }
 
     clickTile = (index) => {
@@ -342,6 +349,7 @@ class Experience extends React.Component {
                 open={this.state.showModal}
                 onClose={this.closeModal}
                 maxWidth="sm"
+                fullScreen={this.state.mobile}
                 // PaperProps={{style:{minHeight:300}}}
             >
                 <DialogTitle id="alert-dialog-title" className='modal-top'>
@@ -389,10 +397,11 @@ class Experience extends React.Component {
                 return <Loading/>;
             default:
                 return (
-                    <GridList cellHeight='auto' spacing={1} className='gridList' cols={4}>
+                    <GridList cellHeight={'auto'} spacing={0} className='gridList'
+                              cols={this.state.mobile ? 4 : 4}>
                         {this.state.tileData.map((tile, index) => (
-                            <GridListTile key={tile.title} cols={tile.featured ? 2 : 1}
-                                          rows={tile.featured ? 2 : 1}
+                            <GridListTile key={tile.title} cols={this.state.mobile ? 2 : 1}
+                                          rows={this.state.mobile ? 1 : 1}
                                           className='item' onClick={() => this.clickTile(index)}>
                                 <div>
                                     <img src={tile.img} alt={tile.title}/>

@@ -7,8 +7,14 @@ import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
 
 import './SliderMenu.css'
+import history from "../../history";
 
 class SliderMenu extends Component {
+
+    handleLogoClick = () =>{
+        history.push('/home');
+        this.props.handleCloseMenu();
+    };
 
     render() {
         return (
@@ -21,6 +27,7 @@ class SliderMenu extends Component {
                     <Grid container spacing={3}
                     >
                         <Grid item xs={12} className='d-flex align-items-center'>
+                            <img onClick={this.handleLogoClick} src='/images/logo-1.png' alt={''} style={{width: 40, height: 'auto'}}/>
                             <IconButton className='closeButtonMenu ml-auto' onClick={this.props.handleCloseMenu}>
                                 <CloseIcon className='closeIconMenu'/>
                             </IconButton>

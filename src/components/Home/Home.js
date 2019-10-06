@@ -8,6 +8,11 @@ import './Home.css';
 import SwitchTransition from "react-transition-group/SwitchTransition";
 import {CSSTransition} from "react-transition-group";
 import Loading from "../Loading/Loading";
+import MediaQuery from "react-responsive";
+import Slide from "@material-ui/core/Slide";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from '@material-ui/icons/Close';
+import Snackbar from "@material-ui/core/Snackbar";
 
 const Styles = styled.div`
     .MuiButton-label{
@@ -21,14 +26,30 @@ class Home extends React.Component {
 
     state = {
         isLoading: true,
+        mobile: false,
     };
 
     componentDidMount() {
-        window.setTimeout(() => this.setState({isLoading: false}), 1000)
+        window.setTimeout(() => this.setState({isLoading: false}), 1000);
+        window.addEventListener("resize", this.resize.bind(this));
+        this.resize();
+        window.setTimeout(() => this.setState({mobile: false}), 5000);
+    }
+
+    resize() {
+        this.setState({mobile: window.innerWidth <= 425});
     }
 
     handleClick = () => {
         history.push('/contact')
+    };
+
+    SlideTransition = (props) => {
+        return <Slide {...props} direction="up"/>
+    };
+
+    handleSnackBarClose = () => {
+        this.setState({mobile: false})
     };
 
     renderContent = () => {
@@ -41,7 +62,7 @@ class Home extends React.Component {
                                className='d-flex justify-content-center align-items-center'>
                         <Styles style={{width: '100%', height: '100%'}}>
                             <Row className='h-100'>
-                                <Col xs={{span: 5, offset: 1}}
+                                <Col xs={{span: 10, offset: 1}} sm={{span: 5, offset: 1}}
                                      className='d-flex align-content-center justify-content-center flex-column'>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1022.64 539.12" id='mainText'>
                                         <g id="Layer_2" data-name="Layer 2">
@@ -127,20 +148,36 @@ class Home extends React.Component {
                                             className='contact-button fade'>CONTACT
                                         ME</Button>
                                 </Col>
-                                <Col xs={{span: 6, offset: 0}} className='d-flex align-items-center'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 647.81 1059.14" id="j">
-                                        <g id="Layer_2" data-name="Layer 2">
-                                            <g id="Layer_1-2" data-name="Layer 1">
-                                                <path className="cls-2"
-                                                      d="M430.09,665.76,100.14,94.27l-56,32.36,330,571.48c25.43,44.07,37.76,79.45,36.63,105.17s-20.48,49.47-57.56,70.87l56-32.35c37.08-21.41,56.45-45.25,57.56-70.87S455.53,709.82,430.09,665.76Z"/>
-                                                <path className="cls-3"
-                                                      d="M263.07,1.37,601.6,587.73c42.1,72.91,54.88,144.9,38,214S571.74,930.24,488.11,978.52C413,1021.89,341.63,1035.19,276,1018S153,950.36,105.31,867.8L58.06,786l146.42-84.54,42.36,73.37c23.7,41.05,48.61,67.77,74,79.41s55.33,7.8,88.82-11.53c37.38-21.58,56.91-45.7,58-71.67s-11.23-61.48-36.77-105.72L101.48,94.66Z"/>
-                                                <path className="cls-2"
-                                                      d="M275.79,1019c-32.94-8.6-64.06-25.66-92.49-50.68s-54.94-58.66-78.83-100.05L56.72,785.57l-56,32.36,47.75,82.7c23.9,41.39,50.42,75.06,78.83,100.06s59.55,42.07,92.5,50.67c65.87,17.2,137.47,3.87,212.81-39.62l56-32.36C413.26,1022.88,341.67,1036.21,275.79,1019Z"/>
+                                <MediaQuery minWidth={426}>
+                                    <Col sm={{span: 6, offset: 0}} className='d-flex align-items-center'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 647.81 1059.14" id="j">
+                                            <g id="Layer_2" data-name="Layer 2">
+                                                <g id="Layer_1-2" data-name="Layer 1">
+                                                    <path className="cls-2"
+                                                          d="M430.09,665.76,100.14,94.27l-56,32.36,330,571.48c25.43,44.07,37.76,79.45,36.63,105.17s-20.48,49.47-57.56,70.87l56-32.35c37.08-21.41,56.45-45.25,57.56-70.87S455.53,709.82,430.09,665.76Z"/>
+                                                    <path className="cls-3"
+                                                          d="M263.07,1.37,601.6,587.73c42.1,72.91,54.88,144.9,38,214S571.74,930.24,488.11,978.52C413,1021.89,341.63,1035.19,276,1018S153,950.36,105.31,867.8L58.06,786l146.42-84.54,42.36,73.37c23.7,41.05,48.61,67.77,74,79.41s55.33,7.8,88.82-11.53c37.38-21.58,56.91-45.7,58-71.67s-11.23-61.48-36.77-105.72L101.48,94.66Z"/>
+                                                    <path className="cls-2"
+                                                          d="M275.79,1019c-32.94-8.6-64.06-25.66-92.49-50.68s-54.94-58.66-78.83-100.05L56.72,785.57l-56,32.36,47.75,82.7c23.9,41.39,50.42,75.06,78.83,100.06s59.55,42.07,92.5,50.67c65.87,17.2,137.47,3.87,212.81-39.62l56-32.36C413.26,1022.88,341.67,1036.21,275.79,1019Z"/>
+                                                </g>
                                             </g>
-                                        </g>
-                                    </svg>
-                                </Col>
+                                        </svg>
+                                    </Col>
+                                </MediaQuery>
+                                <Snackbar anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
+                                          open={this.state.mobile && !this.state.isLoading}
+                                          message={<span id="message-id">View Desktop for full experience!</span>}
+                                          action={
+                                              <IconButton
+                                                  key="close"
+                                                  color="inherit"
+                                                  onClick={this.handleSnackBarClose}
+                                              >
+                                                  <CloseIcon/>
+                                              </IconButton>
+                                          }
+                                          TransitionComponent={this.SlideTransition}
+                                />
                             </Row>
                         </Styles>
                     </Container>

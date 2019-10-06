@@ -154,7 +154,7 @@ class Contact extends React.Component {
                                className='d-flex justify-content-center align-items-center'>
                         <Styles style={{width: '100%', height: '100%'}}>
                             <Row style={{height: '100%'}}>
-                                <Col xs={12} md={{span: 6, offset: 3}}
+                                <Col xs={{span: 9, offset: 1}} md={{span: 6, offset: 3}}
                                      className='d-flex align-items-start justify-content-center flex-column'>
 
                                     <div style={{padding: 15}}>

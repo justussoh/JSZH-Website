@@ -45,18 +45,21 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 .sidebar-link {
     margin-top: 9px;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 15px;
     font-family: "Open Sans", sans-serif;
     letter-spacing: 3px;
     text-decoration: none;
     padding-left: 40px !important;
-    color: #fcbd0b !important;
+    color: #fcbd0b;
 }
 
 .sidebar-link:hover{
     text-decoration: none;
     cursor: pointer;
+    color: #fcbd0b;
+    font-weight: bold;
+
 }
 
 /*@media only screen and (max-width: 425px) {*/
