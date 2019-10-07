@@ -16,6 +16,7 @@ import SliderMenu from "./components/Header/SliderMenu";
 
 import './App.css';
 import Loading from "./components/Loading/Loading";
+import {SnackbarProvider} from "notistack";
 
 
 class App extends Component {
@@ -62,7 +63,19 @@ class App extends Component {
                                                 <Route exact path="/home" component={Home}/>
                                                 <Route exact path="/about" component={About}/>
                                                 <Route exact path="/skill" component={Skills}/>
-                                                <Route exact path="/experience" component={Experience}/>
+                                                <Route exact path="/experience" render={(props) => {
+                                                    return (
+                                                        <SnackbarProvider maxSnack={3}
+                                                                          anchorOrigin={{
+                                                                              vertical: 'bottom',
+                                                                              horizontal: 'right',
+                                                                          }}
+                                                                          hideIconVariant={true}
+                                                        >
+                                                            <Experience {...props}/>
+                                                        </SnackbarProvider>
+                                                    );
+                                                }}/>
                                                 <Route exact path="/project" component={Project}/>
                                                 <Route exact path="/contact" component={Contact}/>
                                             </Switch>

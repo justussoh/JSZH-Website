@@ -15,8 +15,11 @@ import Snackbar from "@material-ui/core/Snackbar";
 import Slide from "@material-ui/core/Slide";
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import MediaQuery from "react-responsive";
+import {withSnackbar} from 'notistack';
 
 import './Modal.css';
+
 
 const Styles = styled.div`
 
@@ -33,7 +36,6 @@ const Styles = styled.div`
     .item img {
         max-width: 100%;
         width:100%
-        height:50vh
         display:block;
         -webkit-transition: .5s ease;
         -moz-transition: .5s ease;
@@ -154,6 +156,7 @@ const Styles = styled.div`
     
 `;
 
+
 class Experience extends React.Component {
 
     state = {
@@ -273,17 +276,22 @@ class Experience extends React.Component {
         modalIndex: 0,
         showSnackBar: true,
         mobile: false,
+        width: 0,
     };
 
     componentDidMount() {
         window.setTimeout(() => this.setState({isLoading: false}), 1000);
-        window.setTimeout(() => this.setState({showSnackBar: false}), 4000);
+        window.setTimeout(() => this.props.enqueueSnackbar('Please note these some projects are not my design.', {variant: 'warning', key:'1'}), 1500);
+        window.setTimeout(() => this.props.enqueueSnackbar('Just the code!', {variant: 'warning', key:'2'}), 2000);
+        window.setTimeout(() => this.props.closeSnackbar('1'), 4000);
+        window.setTimeout(() => this.props.closeSnackbar('2'), 5000);
+        // window.setTimeout(() => this.setState({showSnackBar: false}), 4000);
         window.addEventListener("resize", this.resize.bind(this));
         this.resize();
     }
 
     resize() {
-        this.setState({mobile: window.innerWidth <= 425});
+        this.setState({mobile: window.innerWidth <= 425, width: window.innerWidth});
     }
 
     clickTile = (index) => {
@@ -305,6 +313,8 @@ class Experience extends React.Component {
     handleClickLink = (link) => {
         window.open(link, '_blank')
     };
+
+
 
     renderModalContent = (tile) => {
         switch (tile.type) {
@@ -398,9 +408,9 @@ class Experience extends React.Component {
             default:
                 return (
                     <GridList cellHeight={'auto'} spacing={0} className='gridList'
-                              cols={this.state.mobile ? 4 : 4}>
+                              cols={this.state.mobile ? 8 : 4}>
                         {this.state.tileData.map((tile, index) => (
-                            <GridListTile key={tile.title} cols={this.state.mobile ? 2 : 1}
+                            <GridListTile key={tile.title} cols={this.state.mobile ? 4 : 1}
                                           rows={this.state.mobile ? 1 : 1}
                                           className='item' onClick={() => this.clickTile(index)}>
                                 <div>
@@ -413,6 +423,26 @@ class Experience extends React.Component {
                                         </div>
                                     </h2>
                                 </div>
+                            </GridListTile>
+                        ))}
+                    </GridList>
+                );
+        }
+    };
+
+    renderMobileContent = () => {
+        switch (this.state.isLoading) {
+            case true:
+                return <Loading/>;
+            default:
+                return (
+                    <GridList cellHeight={this.state.width / 2} spacing={0} className='gridList'
+                              cols={2}>
+                        {this.state.tileData.map((tile, index) => (
+                            <GridListTile key={tile.title} cols={1}
+                                          rows={1}
+                                          className='item' onClick={() => this.clickTile(index)}>
+                                <img src={tile.img} alt={tile.title}/>
                             </GridListTile>
                         ))}
                     </GridList>
@@ -434,25 +464,31 @@ class Experience extends React.Component {
                         paddingRight: 0,
                         overflow: 'hidden',
                     }}>
-                        <Styles style={{height: "100%"}}>
-                            {this.renderContent()}
-                            {this.renderModal()}
-                            <Snackbar anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
-                                      open={this.state.showSnackBar && !this.state.isLoading}
-                                      message={<span id="message-id">Please note these some projects are not my design, just the code!</span>}
-                                      action={
-                                          <IconButton
-                                              key="close"
-                                              color="inherit"
-                                              onClick={this.handleSnackBarClose}
-                                          >
-                                              <CloseIcon/>
-                                          </IconButton>
-                                      }
-                                      TransitionComponent={this.SlideTransition}
-                            />
-                        </Styles>
 
+                        <Styles style={this.state.mobile ? {height: "100%", overflow: 'scroll'} : {height: "100%"}}>
+                            <MediaQuery minWidth={426}>
+                                {this.renderContent()}
+                            </MediaQuery>
+                            <MediaQuery maxWidth={425}>
+                                {this.renderMobileContent()}
+                            </MediaQuery>
+                            {this.renderModal()}
+
+                            {/*<Snackbar anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}*/}
+                            {/*          open={this.state.showSnackBar && !this.state.isLoading}*/}
+                            {/*          message={<span id="message-id">Please note these some projects are not my design, just the code!</span>}*/}
+                            {/*          action={*/}
+                            {/*              <IconButton*/}
+                            {/*                  key="close"*/}
+                            {/*                  color="inherit"*/}
+                            {/*                  onClick={this.handleSnackBarClose}*/}
+                            {/*              >*/}
+                            {/*                  <CloseIcon/>*/}
+                            {/*              </IconButton>*/}
+                            {/*          }*/}
+                            {/*          TransitionComponent={this.SlideTransition}*/}
+                            {/*/>*/}
+                        </Styles>
                     </Container>
                 </CSSTransition>
             </SwitchTransition>
@@ -460,5 +496,5 @@ class Experience extends React.Component {
     }
 }
 
-export default Experience;
+export default withSnackbar(Experience);
 
