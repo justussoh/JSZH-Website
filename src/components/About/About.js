@@ -8,6 +8,7 @@ import {CSSTransition} from "react-transition-group";
 import Typist from 'react-typist';
 import 'react-typist/dist/Typist.css';
 import WOW from "wow.js";
+import MediaQuery from "react-responsive";
 
 const Styles = styled.div`
     .font-color{
@@ -45,11 +46,14 @@ class About extends React.Component {
                         <Styles>
                             <Col xs={{span: 10, offset: 1}}>
                                 <Row>
-                                    <Col xs={false} md={6} className='d-flex align-items-center justify-content-center'>
-                                        <img src='/images/about.jpg' alt='about' style={{width: '100%'}}
-                                             className='wow fadeIn' data-wow-delay='1.25s'
-                                             data-wow-offset='20'/>
-                                    </Col>
+                                    <MediaQuery minWidth={426}>
+                                        <Col xs={false} md={6}
+                                             className='d-flex align-items-center justify-content-center'>
+                                            <img src='/images/about.jpg' alt='about' style={{width: '100%'}}
+                                                 className='wow fadeIn' data-wow-delay='1.25s'
+                                                 data-wow-offset='20'/>
+                                        </Col>
+                                    </MediaQuery>
                                     <Col xs={12} md={6}
                                          className='d-flex align-items-start justify-content-center flex-column'>
                                         <Typist startDelay={1250} className="MyTypist">

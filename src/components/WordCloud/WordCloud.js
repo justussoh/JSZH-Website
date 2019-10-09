@@ -45,7 +45,7 @@ class WordCloud extends React.Component {
         window.open('https://www.linkedin.com/in/justussoh/', '_blank')
     };
 
-    handleLinkin = () => {
+    handleGithub = () => {
         window.open('https://github.com/justussoh', '_blank')
     };
 
@@ -61,7 +61,7 @@ class WordCloud extends React.Component {
                         </div>
                         <div className='ml-auto d-flex align-items-center justify-content-center'>
                             <FontAwesomeIcon icon={faLinkedin} className='icon' onClick={this.handleLinkin}/>
-                            <FontAwesomeIcon icon={faGithub} className='icon' onClick={this.handleGithubt}/>
+                            <FontAwesomeIcon icon={faGithub} className='icon' onClick={this.handleGithub}/>
                             <FontAwesomeIcon icon={faEnvelope} className='icon' onClick={this.handleContact}/>
                         </div>
                     </div>
