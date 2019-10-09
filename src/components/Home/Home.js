@@ -144,9 +144,15 @@ class Home extends React.Component {
                                         </g>
                                     </svg>
                                     <span className='btm-text fade'>Machine Learning / Data Visualisation / M.E.R.N Stack</span>
-                                    <Button variant="outlined" onClick={this.handleClick}
-                                            className='contact-button fade'>CONTACT
-                                        ME</Button>
+                                    <div>
+                                        <Button variant="outlined" onClick={this.handleClick}
+                                                className='contact-button fade'>CONTACT
+                                            ME</Button>
+                                        <Button variant="outlined" onClick={() => {
+                                            window.open('/documents/Soh_Zhi_Heng_Justus_CV Edited.pdf')
+                                        }}
+                                                className='contact-button fade' style={{marginLeft:15, width:140}}>VIEW RESUME</Button>
+                                    </div>
                                 </Col>
                                 <MediaQuery minWidth={426}>
                                     <Col sm={{span: 6, offset: 0}} className='d-flex align-items-center'>

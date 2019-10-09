@@ -7,6 +7,8 @@ import Loading from "../Loading/Loading";
 import SwitchTransition from "react-transition-group/SwitchTransition";
 import {CSSTransition} from "react-transition-group";
 import MediaQuery from "react-responsive";
+import Typist from 'react-typist';
+import 'react-typist/dist/Typist.css';
 
 const data = [
     [
@@ -29,6 +31,7 @@ const Styles = styled.div`
     .font-title{
         color:#fcbd0b;
         font-weight: bold;
+        font-size:28px;
     }
     
     .font-link{
@@ -66,7 +69,9 @@ class Skills extends React.Component {
                             <Col xs={{span: 10, offset: 1}}>
                                 <Row>
                                     <Col xs={12} md={5}>
-                                        <h1 className='font-title'>SKILLS</h1>
+                                        <Typist className='font-title' startDelay={1250}>
+                                            WHAT I CAN DO
+                                        </Typist>
                                         <p className='font'>
                                             The main area of my expertise is in Data Analytics (Descriptive,
                                             Prescriptive and Predictive Analytics) using R and Python. In addition, I
