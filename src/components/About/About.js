@@ -7,6 +7,7 @@ import SwitchTransition from "react-transition-group/SwitchTransition";
 import {CSSTransition} from "react-transition-group";
 import Typist from 'react-typist';
 import 'react-typist/dist/Typist.css';
+import WOW from "wow.js";
 
 const Styles = styled.div`
     .font-color{
@@ -29,6 +30,8 @@ class About extends React.Component {
 
     componentDidMount() {
         window.setTimeout(() => this.setState({isLoading: false}), 1000)
+        const wow = new WOW();
+        wow.init();
     }
 
     renderContent = () => {
@@ -43,14 +46,17 @@ class About extends React.Component {
                             <Col xs={{span: 10, offset: 1}}>
                                 <Row>
                                     <Col xs={false} md={6} className='d-flex align-items-center justify-content-center'>
-                                        <img src='/images/about.jpg' alt='about' style={{width: '100%'}}/>
+                                        <img src='/images/about.jpg' alt='about' style={{width: '100%'}}
+                                             className='wow fadeIn' data-wow-delay='1.25s'
+                                             data-wow-offset='20'/>
                                     </Col>
                                     <Col xs={12} md={6}
                                          className='d-flex align-items-start justify-content-center flex-column'>
                                         <Typist startDelay={1250} className="MyTypist">
                                             <span className='font-title'>MORE ABOUT ME</span>
                                         </Typist>
-                                        <p className='font-color'>
+                                        <p className='font-color wow fadeIn' data-wow-delay='1.25s'
+                                           data-wow-offset='20'>
                                             I am a data analyst, full stack web developer and also a student from the
                                             National University of Singapore pursing a bachelor’s degree in business
                                             analytics.
@@ -58,7 +64,8 @@ class About extends React.Component {
                                         <Typist startDelay={1250} className="MyTypist">
                                             <span className='font-title'>I AM LOOKING FOR</span>
                                         </Typist>
-                                        <p className='font-color'>
+                                        <p className='font-color wow fadeIn' data-wow-delay='1.25s'
+                                           data-wow-offset='20'>
                                             I am currently pursuing a full time internship program at San Francisco,
                                             California from January 2020 onwards, particularly in the area of data
                                             analysis and software development. Through the internship program, I hope to
