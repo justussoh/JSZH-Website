@@ -174,7 +174,7 @@ class Experience extends React.Component {
                     'Teach computer vision model to identify and count items using CRNN model.',
                     'Developed responsive main website for company.',
                 ],
-                links: [['View Site', 'http://www.shipsuppliesdirect.com']],
+                links: [['View Site', 'http://www.shipsuppliesdirect.com'],['View Testimony', '/documents/SSD_Testimony.pdf']],
                 img: '/images/ssd.png'
             },
             {
@@ -189,7 +189,7 @@ class Experience extends React.Component {
                     'Developed job creation, dashboard, analytics, job scheduling and view details modules for Simpfleet.',
                     'Developed a scheduling algorithm which find most efficient route of delivery.',
                 ],
-                links: [['View Site', 'http://www.simpfleet.com']],
+                links: [['View Site', 'http://www.simpfleet.com'],['View Testimony', '/documents/SSD_Testimony.pdf']],
                 img: '/images/simpfleet.png'
             },
             {
