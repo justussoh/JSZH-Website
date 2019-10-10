@@ -149,7 +149,7 @@ class Home extends React.Component {
                                                 className='contact-button fade'>CONTACT
                                             ME</Button>
                                         <Button variant="outlined" onClick={() => {
-                                            window.open('/documents/Soh_Zhi_Heng_Justus_CV Edited.pdf')
+                                            window.open('/documents/Justus Soh Zhi Heng_Resume.pdf')
                                         }}
                                                 className='contact-button fade' style={{marginLeft:15, width:140}}>VIEW RESUME</Button>
                                     </div>
