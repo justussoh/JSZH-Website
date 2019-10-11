@@ -169,10 +169,10 @@ class Experience extends React.Component {
                 time: ['Aug 2019 – Present (Part Time)', 'May 2019 – Aug 2019 (Intern)'],
                 role: 'Data Analyst / Software Developer Intern, Part Time',
                 content: [
-                    'Analyzed vessel berthing timing and created a model to predict delay in vessel berth timing.',
-                    'Analyzed list of potential customers based on data (trip frequency/volume) to allow for more data driven decisions with dashboard visualization.',
-                    'Teach computer vision model to identify and count items using CRNN model.',
-                    'Developed responsive main website for company.',
+                    'Created a model to predict delay of vessel arrival timing to a 80% accuracy',
+                    'Analyzed list of potential customers based on data (trip frequency/volume) and created a dashboard to allow for more data driven decisions',
+                    'Developed a computer vision model to identify and count items using CRNN model to a 73% accuracy',
+                    'Overhauled websites for SSD and Simpfleet to improve user experience',
                 ],
                 links: [['View Site', 'http://www.shipsuppliesdirect.com'],['View Testimony', '/documents/SSD_Testimony.pdf']],
                 img: '/images/ssd.png'
@@ -185,9 +185,8 @@ class Experience extends React.Component {
                 time: ['Aug 2019 – Present (Part Time)', 'May 2019 – Aug 2019 (Intern)'],
                 role: 'Data Analyst / Software Developer Intern, Part Time',
                 content: [
-                    'Developed responsive landing page and web application for Simpfleet.',
-                    'Developed job creation, dashboard, analytics, job scheduling and view details modules for Simpfleet.',
-                    'Developed a scheduling algorithm which find most efficient route of delivery.',
+                    'Built job creation, dashboard, analytics, job scheduling and view details modules for Simpfleet',
+                    'Designed and implemented a scheduling algorithm to find most efficient route of delivery'
                 ],
                 links: [['View Site', 'http://www.simpfleet.com'],['View Testimony', '/documents/SSD_Testimony.pdf']],
                 img: '/images/simpfleet.png'
@@ -200,8 +199,8 @@ class Experience extends React.Component {
                 time: ['Jan 2016 – Nov 2017'],
                 role: 'Pioneer and Vehicle In-Charge, 36 Singapore Combat Engineers (EOD)',
                 content: [
-                    'Responsible for the deployment and maintenance of all vehicles.',
-                    'Managed nineteen men in my unit for daily operations.',
+                    'Responsible for deployment and maintenance of all vehicles in 36SCE achieving 100% mission success',
+                    'Managed nineteen men in 36SCE for daily operations ensuring 24/7 operational readiness',
                 ],
                 links: [],
                 img: '/images/eod.png'
@@ -248,9 +247,10 @@ class Experience extends React.Component {
                 type: 'experience',
                 time: ['Aug 2018 - Present'],
                 role: 'Resident and Student',
-                content: ['Represented Tembusu College for Floorball in ICG’18',
+                content: [
+                    'Co-leaders for Tembusu Christian Fellowship',
+                    'Represented Tembusu College for Floorball in ICG’18',
                     'Tembusu Climbing Club',
-                    'Co-leaders for Tembusu Christian Fellowship'
                 ],
                 links: [],
                 img: '/images/tembusu.png'

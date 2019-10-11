@@ -284,6 +284,7 @@ class Skills extends React.Component {
                                                      style={{margin: '0px 5px'}}>
                                                     <legend className='legend-font'>{obj.name}</legend>
                                                     <Rating
+                                                        readOnly
                                                         name={obj.name}
                                                         value={obj.value}
                                                         precision={1}
@@ -312,6 +313,7 @@ class Skills extends React.Component {
                                                      style={{margin: '0px 5px'}}>
                                                     <legend className='legend-font'>{obj.name}</legend>
                                                     <Rating
+                                                        readOnly
                                                         name={obj.name}
                                                         value={obj.value}
                                                         precision={1}
