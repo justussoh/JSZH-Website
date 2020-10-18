@@ -30,7 +30,7 @@ class WordCloud extends React.Component {
     componentDidMount() {
         setInterval(() => {
             this.forceUpdate();
-        }, 5000);
+        }, 10000);
     }
 
     handleClick = () => {
@@ -77,8 +77,11 @@ class WordCloud extends React.Component {
                         <div style={styles.large}>Data Analyst</div>
                         <div style={styles.large}>Programmer</div>
                         <div style={styles.large}>Machine Learning</div>
-                        <div style={{fontStyle: "italic"}}>Entrepreneurship</div>
+                        <div style={styles.normal}>Entrepreneur</div>
+                        <div style={styles.normal}>Designer</div>
                         <div style={styles.normal}>Python</div>
+                        <div style={styles.normal}>Communicator</div>
+                        <div style={styles.normal}>Problem Solver</div>
                         <div style={styles.normal}>JavaScript</div>
                         <div style={styles.normal}>R</div>
                         <div style={styles.normal}>Tableau</div>
@@ -87,9 +90,9 @@ class WordCloud extends React.Component {
                         <div style={styles.normal}>Illustrator</div>
                         <div style={styles.normal}>Adobe XD</div>
                         <div style={styles.normal}>Photography</div>
-                        <div style={styles.normal}>MongoDB</div>
                         <div style={styles.small}>NodeJS</div>
-                        <div style={styles.small}>Material UI</div>
+                        <div style={styles.small}>CSS</div>
+                        <div style={styles.small}>React</div>
                         <div style={styles.small}>BootStrap</div>
                         <div style={styles.small}>HTML</div>
                     </TagCloud>

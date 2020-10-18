@@ -1,11 +1,10 @@
 import React from 'react';
 import history from '../../history';
 import styled from 'styled-components';
-import {Container, Col, Row, Nav, Navbar} from 'react-bootstrap';
+import { Row, Navbar} from 'react-bootstrap';
 import IconButton from "@material-ui/core/IconButton";
 import PersonIcon from '@material-ui/icons/PersonOutlined';
 import BarIcon from '@material-ui/icons/ShowChartOutlined';
-import ExploreIcon from '@material-ui/icons/Explore';
 import WorkIcon from '@material-ui/icons/WorkOutline';
 import MailIcon from '@material-ui/icons/MailOutlined';
 import HomeIcon from '@material-ui/icons/HomeOutlined';

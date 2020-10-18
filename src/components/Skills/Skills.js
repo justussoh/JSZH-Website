@@ -252,11 +252,12 @@ class Skills extends React.Component {
                                     <Row className='d-flex justify-content-center align-items-center'>
                                         <p className='font'>Visit my <a href='https://www.linkedin.com/in/justussoh/'
                                                                         target='_blank'
+                                                                        rel="noopener noreferrer"
                                                                         className='font-link'>LinkedIn</a>, <a
-                                            href='https://github.com/justussoh' target='_blank'
+                                            href='https://github.com/justussoh' target='_blank' rel="noopener noreferrer"
                                             className='font-link'>Github</a> or <a
                                             href='https://public.tableau.com/profile/justus.soh#!/'
-                                            target='_blank' className='font-link'>Tableau</a> profiles for more details,
+                                            target='_blank' rel="noopener noreferrer" className='font-link'>Tableau</a> profiles for more details,
                                             or
                                             just <span
                                                 onClick={this.handleClick} className='font-link'>contact</span> me! </p>
@@ -329,11 +330,12 @@ class Skills extends React.Component {
                                     <Row className='d-flex justify-content-center align-items-center' style={{marginTop:15}}>
                                         <p className='font'>Visit my <a href='https://www.linkedin.com/in/justussoh/'
                                                                         target='_blank'
+                                                                        rel="noopener noreferrer"
                                                                         className='font-link'>LinkedIn</a>, <a
-                                            href='https://github.com/justussoh' target='_blank'
+                                            href='https://github.com/justussoh' target='_blank' rel="noopener noreferrer"
                                             className='font-link'>Github</a> or <a
                                             href='https://public.tableau.com/profile/justus.soh#!/'
-                                            target='_blank' className='font-link'>Tableau</a> profiles for more details,
+                                            target='_blank'  rel="noopener noreferrer" className='font-link'>Tableau</a> profiles for more details,
                                             or
                                             just <span
                                                 onClick={this.handleClick} className='font-link'>contact</span> me! </p>

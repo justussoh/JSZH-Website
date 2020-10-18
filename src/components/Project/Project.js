@@ -1,7 +1,6 @@
 import React from 'react';
-import history from '../../history';
 import styled from 'styled-components';
-import {Container, Col, Row} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 

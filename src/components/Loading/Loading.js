@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Container, Col, Row} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 const Styles = styled.div`

@@ -1,9 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import history from '../../history';
 import styled from 'styled-components';
 import {Container, Col, Row} from 'react-bootstrap';
-import ReactMapGL from 'react-map-gl';
 import Button from '@material-ui/core/Button';
 import Snackbar from "@material-ui/core/Snackbar";
 import Slide from "@material-ui/core/Slide";
@@ -60,7 +58,6 @@ const Styles = styled.div`
     }
 `;
 
-const MAPBOX_TOKEN = "pk.eyJ1IjoianVzdHVzc29oIiwiYSI6ImNqemt4cmwwcjBpN2kzYnNhMTNjMWptd3oifQ.My8I-eSghEV14L3CCu6vDA";
 
 class Contact extends React.Component {
 

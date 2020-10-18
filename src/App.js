@@ -15,7 +15,7 @@ import Skills from "./components/Skills/Skills";
 import SliderMenu from "./components/Header/SliderMenu";
 
 import './App.css';
-import Loading from "./components/Loading/Loading";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {SnackbarProvider} from "notistack";
 
 

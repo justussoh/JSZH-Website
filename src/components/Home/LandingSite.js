@@ -1,7 +1,6 @@
 import React from 'react';
-import history from '../../history';
 import styled from 'styled-components';
-import {Container, Col, Row} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import WordCloud from "../WordCloud/WordCloud";
 
 const Styles = styled.div`

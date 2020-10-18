@@ -1,5 +1,4 @@
 import React from 'react';
-import history from '../../history';
 import styled from 'styled-components';
 import {Container, Col, Row} from 'react-bootstrap';
 import Loading from "../Loading/Loading";
